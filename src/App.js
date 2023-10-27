@@ -1,4 +1,4 @@
-import { Routes, Route,useLocation } from 'react-router-dom';
+import { HashRouter, Route,useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Purchases from './pages/Purchases';
@@ -12,12 +12,10 @@ import Nopage from './pages/Nopage';
 import Profile from './pages/Profile'
 
 const App = () => {
-      const location = useLocation();
-
-
+  
 
  return (   
-       <Routes location={location}>
+       <HashRouter>
           <Route path="/" element={<Home />} Component={Home}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/purchases" element={<Purchases />} />
@@ -30,7 +28,7 @@ const App = () => {
           <Route path='/profile' element={<Profile />} />
           <Route path='*'  element={<Nopage />} />
 
-       </Routes>
+       </HashRouter>
  );
 };
 
