@@ -336,7 +336,7 @@ return(
   
   <div className={`${s.electronics} ${s.part}`}>
     <div className={`${s.electronics} ${s.title}`} id="tcatagory"></div>
-    <div className={`${s.electronics} ${s.article}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel distinctio nesciunt molestiae magni animi corrupti, quasi vitae in est fugit autem numquam amet iure, veniam, magnam blanditiis? Culpa, ipsam expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio provident dolorem quo aliquam harum quasi corporis, sit iste nisi odit consequatur quod reiciendis quisquam quam ipsa minima unde inventore itaque!</div>
+    <div className={`${s.electronics} ${s.article}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel distinctio nesciunt molestiae magni animi corrupti, quasi vitae in est fugit autem numquam amet iure, veniam, magnam blanditiis? Culpa, ipsam expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio provident dolorem quo aliquam harum quasi corporis, sit iste nisi odit consequatur quod reiciendis quisquam quam ipsa minima unde inventore itaue!</div>
     <Link to='/electronic' className={`${s.electronics} ${s.goto}`}>Goto electronics section <i className="fa-thin fa-arrow-right-long"></i></Link>
 </div>
 <img className={`${s.eimg} ${s.part}`} src={`${"https://picsum.photos/640/350?r="+Math.floor(Math.random()*1000000)}`} /> 

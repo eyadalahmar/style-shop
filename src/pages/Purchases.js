@@ -78,7 +78,8 @@ render(){
       <Catalang>catm</Catalang>
 
     </nav>
-<main className={s.main} id='mainn'>{!this.props.account?<div className={s.purchasestext}>Please log in to show your purchases</div>:this.props.purList.length==0?<div className={s.purchasestext}>You haven't any purchases yet</div>: (<Fragment>
+<main className={s.main} id='mainn'>{!this.props.account?<div className={s.purchasestext}>Please log in to show your purchases</div>:this.props.purList==[]?
+<div className={s.purchasestext}>You haven't any purchases yet</div>: (<Fragment>
   
  <div className={s.purchasestext}>Your purchases</div>
  <table className={s.table}>
@@ -92,7 +93,7 @@ render(){
 </Fragment>
 )}
  
-{this.props.purList.length!=0&&<div className={s.bnote}>Adding more columns (e.g. purchase date) requires back-end features</div> }
+{this.props.account&&this.props.purList!=[]&&<div className={s.bnote}>Adding more columns (e.g. purchase date) requires back-end features</div> }
 </main>
 <Footer />
 </div>

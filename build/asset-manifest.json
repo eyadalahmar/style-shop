@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/style-shop/static/css/main.2ab3e208.css",
-    "main.js": "/style-shop/static/js/main.42754272.js",
+    "main.js": "/style-shop/static/js/main.a5a21381.js",
     "static/media/uniqlo-gb031fe49b_1920.jpg": "/style-shop/static/media/uniqlo-gb031fe49b_1920.6b8b073e72046262be60.jpg",
     "static/media/clothing-header-image.png": "/style-shop/static/media/clothing-header-image.102adf654b8b04df3eb8.png",
     "static/media/istockphoto-901863672-612x612 (1).png": "/style-shop/static/media/istockphoto-901863672-612x612 (1).2f1dab4bfac80480875e.png",
@@ -11,10 +11,10 @@
     "static/media/Untitled-1.svg": "/style-shop/static/media/Untitled-1.ad2d7d6a85b882c2ba91.svg",
     "index.html": "/style-shop/index.html",
     "main.2ab3e208.css.map": "/style-shop/static/css/main.2ab3e208.css.map",
-    "main.42754272.js.map": "/style-shop/static/js/main.42754272.js.map"
+    "main.a5a21381.js.map": "/style-shop/static/js/main.a5a21381.js.map"
   },
   "entrypoints": [
     "static/css/main.2ab3e208.css",
-    "static/js/main.42754272.js"
+    "static/js/main.a5a21381.js"
   ]
 }
