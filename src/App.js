@@ -15,7 +15,7 @@ const App = () => {
   
 
  return (   
-       <HashRouter>
+       <Routes>
           <Route exact path="/style-shop/" element={<Home />} Component={Home}/>
           <Route exact path="/style-shop/contact/" element={<Contact />}/>
           <Route exact path="/style-shop/purchases/" element={<Purchases />} />
@@ -28,7 +28,7 @@ const App = () => {
           <Route exact path='/style-shop/profile/' element={<Profile />} />
           <Route path='*'  element={<Nopage />} />
 
-       </HashRouter>
+       </Routes>
  );
 };
 
