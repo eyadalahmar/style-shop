@@ -1,0 +1,282 @@
+.logo {
+  height: 75%;
+  left: 10px;
+  scale: 0.75;
+  top: 5px;
+  position: absolute;
+}
+
+
+.search {
+  width: 300px;
+  left: 85px;
+  margin-top: 5px;
+  background-color: #bb4b00;
+  border-color: ghostwhite;
+  border-width: 1px;
+  height: 25px;
+  border-style: solid;
+  position: absolute;
+  z-index: 60;
+  font-family: l;
+
+}
+
+.contact {
+  color: ghostwhite;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  align-items: start;
+  width: 150px;
+  word-wrap: unset;
+}
+
+.log,
+.sign {
+  position: absolute;
+  top: 10px;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  width: 85px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 1.2rem;
+}
+
+.sign {
+  right: 30px;
+  background-color: ghostwhite;
+  color: #813300;
+
+}
+
+.averline {
+  width: 0;
+  border-left-color: ghostwhite;
+  border-left-width: 1px;
+  border-left-style: solid;
+  height: 40px;
+  position: absolute;
+  right: 123px;
+  top: 9px
+}
+
+.log {
+  right: 130px;
+  color: ghostwhite;
+  background-color: transparent;
+
+}
+
+
+
+.searchrel {
+  font-size: 0.8rem;
+  width: 300px;
+  left: 85px;
+  color: ghostwhite;
+  background-color: #813300;
+  border-color: ghostwhite;
+  border-width: 1px;
+  z-index: 2;
+  top: 44px;
+  height: 50px;
+  border-style: solid;
+  position: absolute;
+  animation-name: appearing;
+}
+
+.lhorline {
+  height: 0;
+  border-bottom-color: ghostwhite;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 55px;
+  margin: 0 auto;
+}
+
+.fmhorline,
+.smhorline {
+
+  height: 0;
+  border-bottom-color: ghostwhite;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 80px;
+  margin: 0 auto;
+}
+
+.scroll {
+  margin: 0 auto;
+  position: absolute;
+  right: 21px;
+  z-index: 83;
+  width: 20px;
+  height: 50px;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #bb4b00;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+}
+
+.rside {
+  right: 0;
+  top: 0;
+  position: absolute;
+  margin-right: 25px;
+}
+
+.account {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.nav {
+  background-color: #813300;
+}
+
+.main {
+  padding-top: 50px;
+}
+
+.cdata {
+  padding: 30px;
+  height: 80%;
+  width: 35%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-around;
+  right: 0;
+
+}
+
+.tarea {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+height: 200px;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.cinput {
+  height: 25px;
+  width: 100%;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+.name,
+.email,
+.message {
+  font-size: large;
+}
+
+.lists {
+  width: 400px;
+}
+
+.carticle {
+  width: 40%;
+  margin-left: 80px;
+  margin-top: 100px;
+}
+
+.ctitle {
+  font-size: 3.5rem;
+}
+
+.logos {
+  position: relative;
+  width: 100px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ortext {
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+
+.main::after {
+  content: '';
+  background-image: url('../istockphoto-901863672-612x612\ \(1\).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+}
+
+.button {
+  width: 120px;
+  border-color: #813300;
+  background-color: ghostwhite;
+  border-width: 2px;
+  border-style: solid;
+  height: 30px;
+
+}
+
+.arect {
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  width: fit-content;
+  height: 35px;
+  line-height: 35px;
+  font-size: 1.2rem;
+  overflow: hidden;
+  color: ghostwhite;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  margin-left: 20px;
+}
+
+.profileimg {
+  height: 25px;
+  width: 25px;
+  border-color: ghostwhite;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 25px;
+  margin-right: 7px;
+}
+
+.logout {
+  color: ghostwhite;
+  scale: 1.25;
+  display: inline;
+  cursor: pointer;
+}
+
+.user {
+  top: 9px;
+  width: fit-content;
+  padding: 0 1px;
+  height: 40px;
+  right: 30px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}

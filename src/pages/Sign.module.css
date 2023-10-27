@@ -1,0 +1,172 @@
+.logo {
+  height: 75%;
+  left: 10px;
+  scale: 0.75;
+  top: 5px;
+  position: absolute;
+}
+
+.contact {
+  color: ghostwhite;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  align-items: start;
+  width: 150px;
+  word-wrap: unset;
+}
+
+.lists {
+  width: 500px;
+}
+
+.sign {
+  right: 30px;
+  background-color: ghostwhite;
+  color: #813300;
+
+}
+
+.averline {
+  width: 0;
+  border-left-color: ghostwhite;
+  border-left-width: 1px;
+  border-left-style: solid;
+  height: 40px;
+  position: absolute;
+  right: 123px;
+  top: 9px
+}
+
+.log {
+  right: 130px;
+  color: ghostwhite;
+  background-color: transparent;
+
+}
+
+.lhorline {
+  height: 0;
+  border-bottom-color: ghostwhite;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 55px;
+  margin: 0 auto;
+}
+
+.fmhorline,
+.smhorline {
+
+  height: 0;
+  border-bottom-color: ghostwhite;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 80px;
+  margin: 0 auto;
+}
+
+.rside {
+  right: 0;
+  top: 0;
+  position: absolute;
+  margin-right: 0px;
+}
+
+.account {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+
+.nav {
+  top: 0;
+  background-color: #813300;
+}
+
+
+.main {
+  background-color: #c07f54;
+  height: 100%;
+  width: 100%;
+  top: 0;
+
+  position: absolute;
+}
+
+.signup {
+  width: 50%;
+  max-width: 400px;
+  top: 100px;
+  border-color: black;
+  background-color: #bb4b00;
+  border-width: 3px;
+  border-style: solid;
+  margin: 110px auto;
+
+}
+
+.signt {
+  font-size: 2.4rem;
+  text-align: center;
+  color: ghostwhite;
+}
+
+.f {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  width: 100%;
+}
+
+.f>div {
+  margin: 5px auto;
+  width: 80%;
+
+}
+
+.sinput {
+  width: 96%;
+  height: 25px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+.name,
+.email,
+.password {
+  font-size: large;
+}
+
+.login {
+  text-decoration: none;
+  color: ghostwhite;
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.err {
+  color: #490000;
+
+  margin-top: 5px;
+  margin-left: 30px;
+
+}
+
+.button {
+  width: 110px;
+  border-color: #813300;
+  background-color: ghostwhite;
+  border-width: 2px;
+  border-style: solid;
+  box-sizing: content-box;
+  margin: 20px auto;
+  font-family: l;
+  padding: 0;
+  display: block;
+  font-weight: 700;
+  min-height: 25px;
+  line-height: 20px;
+  cursor: pointer;
+}

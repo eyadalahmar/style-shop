@@ -1,0 +1,279 @@
+@font-face {
+  font-family: l ;
+  src: url(./KyrionPro-Regular.ttf) 
+  ;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  
+  font-family: l;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: ghostwhite;
+}
+#catagoriest{
+  cursor: pointer;
+}
+#arrow{
+  animation: arrow 10s linear  0s infinite normal both;
+  color: ghostwhite;
+  bottom: 90px;
+  position: absolute;
+  scale: 4.0;
+}
+nav{z-index: 10;
+  font-size: 1.2rem;
+  height: 40px;
+  width: 100%;
+position: fixed;  
+padding: 10px;
+}
+
+   
+  input:focus{
+    
+    outline: none;
+  }
+  textarea:focus{
+    
+    outline: none;
+  }
+  
+  ul{
+    display: flex;
+    margin-block: 0;
+    margin: -16px;
+    padding: 0;
+    justify-content: space-between;
+    list-style: none;
+    width:470px;
+  
+    position: absolute;
+  }
+  li{
+    width: auto;
+    padding: 0px;
+    margin: 20px;
+    height: 100%;  
+    color: ghostwhite;
+    text-align: center;
+    display: inline;
+  }
+
+ li *{
+  color: ghostwhite;
+  text-decoration: none;
+ }
+ a{
+  text-decoration: none;
+ }
+  #search::after{
+    translate: -19px;
+    content: '';
+    background-color: #5c2401;
+    z-index:5;
+    opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  }
+  #catagoriesm *{
+color: ghostwhite;
+  }
+  #main::before{
+    content: '';
+    background-image: url('./istockphoto-901863672-612x612\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    inset: 0;
+    position: absolute;
+  z-index: 2;;
+  
+  }
+
+  #main::after{
+    content: '';
+    background-color: #5c2401;
+    z-index:2;
+    opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  } 
+  
+  #main div{
+  position: absolute;
+  top: 80px;
+  left: 25px;
+  color: ghostwhite;
+  z-index: 3;
+  font-size: 9rem
+  }
+  #main span{
+    z-index: 4;
+   
+    display: block;
+    left: 18rem;
+    position: absolute;
+  }
+  .goto i{
+  position: relative;
+  top: 3px;
+  left:5px;
+  }
+  #catagoriestitle span{
+    display: block;
+  margin-bottom: 80px;
+  }
+  #catagories img:nth-of-type(2n){
+    right: 60px;
+  }
+  #catagories img:nth-of-type(2n-1){
+    left: 60px;
+  }
+  
+
+  
+  #scroll *{
+    color: ghostwhite;
+    z-index: 5;
+    }
+    #scroll::after{
+      
+      content: '';
+      background-color: #5c2401;
+      z-index:3;
+      opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+    #catagoriesm{
+      z-index: 300;
+    }
+    #sign,#log,#catagoriesm *{
+text-decoration: none;
+    }
+    #log:visited,#catagoriesm *:visited,#log:active,#catagoriesm *:active{
+      color: ghostwhite;
+          }
+          #sign:visited,#sign:active{
+color: black;
+
+
+          }
+     
+  @keyframes arrow{
+    0%{
+  translate:  0 0;
+  
+    }
+    30%{
+      translate: 0 -25px;
+    }
+  
+    100%{
+  translate:  0 0;
+      
+    }
+  }
+  @keyframes appearing {
+   0%{
+    opacity: 0;
+  translate: 0 10px;
+  } 
+  100%{
+    opacity: 1;
+    translate: 0 0;
+  }
+  
+  }
+  @keyframes disappearing {
+  
+  0%{
+    opacity: 1;
+    translate: 0 0;
+  }
+    100%{
+     opacity: 0;
+   translate: 0 10px;
+   
+   }}
+   @keyframes colort {
+    0%{
+      background-color:#81330000;
+    }
+    100%{
+      background-color:#813300ff;
+    }
+   }
+   @keyframes colorf {
+    
+     100%{
+       background-color:#81330000;
+      }
+      0%{
+      background-color:#813300ff;
+    }
+   }
+   @keyframes transparent {
+  0%{
+    opacity: 1;
+  }
+  40%{
+  opacity: 0;
+  }
+    60%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+   }
+   @keyframes transparentc {
+  0%{
+    opacity: 1;
+  }
+  40%{
+  opacity: 0;
+  }
+    60%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+   }
+   @keyframes transparenth {
+  0%{
+    opacity: 1;
+  }
+  100%{
+  opacity: 0;
+  }
+   }
+   
+   @keyframes disappear {
+    0%{
+      translate:0
+    }
+    100%{
+      translate: 
+      0 -200px;
+    }
+  }
+  @keyframes appear {
+    0%{
+      translate: 
+      0 -200px;
+    }
+    100%{
+      translate:0
+    }
+  }

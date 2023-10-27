@@ -1,0 +1,302 @@
+
+  .logo{
+  height: 75%;
+  left: 10px;
+  scale: 0.75;
+  top: 5px;
+  position: absolute;
+  }
+ .contact{
+    text-decoration: none;
+  display: block;
+  text-align: left;
+  align-items: start;
+  width: 150px;
+  word-wrap: unset;
+  }
+  .purchases{
+    color: ghostwhite;
+    text-decoration: none;
+  display: block;
+  text-align: left;
+  align-items: start;
+  word-wrap: unset; 
+  }
+  .main{
+    width: 100%;
+    background-color: #a54201;
+    position: relative;
+  
+  }
+  .log,.sign{
+    position: absolute;
+    top: 10px;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  width:85px;
+  height:35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 1.2rem;}
+  .sign{
+    right:30px;
+    background-color: ghostwhite;
+    color:#813300;
+  }
+  .averline{
+    width: 0;
+    border-left-color: ghostwhite;
+    border-left-width: 1px;
+    border-left-style: solid;
+    height: 40px;
+    position: absolute;
+  right: 123px;
+  top:9px 
+  }
+  .log{
+    right:130px;
+    color:ghostwhite;
+    background-color: transparent;
+  
+  }
+  .lang{
+    color: ghostwhite;
+    right: 235px;
+    top: 19px;
+    position: absolute;
+    scale: 1.25;
+  }
+  
+  .langs{
+    font-size: 1rem;
+    line-height: 25px;
+  color: ghostwhite;
+  width: 70px;
+  height: 53px;
+  text-align: center;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;  
+  position: absolute;
+  right: 234px;;
+  top: 50px;
+  }
+  
+  .catagoriesm{
+    font-size: 1rem;
+    line-height: 25px;
+  color: ghostwhite;
+  width:100px;
+  height: 80px;
+  text-align: center;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;  
+  position: absolute;
+  top: 50px;
+  
+  }
+  .lhorline{
+    height: 0;
+    border-bottom-color: ghostwhite;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 55px;
+     margin: 0 auto;
+  }
+  .fmhorline,.smhorline{
+  
+    height: 0;
+    border-bottom-color: ghostwhite;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 80px;
+     margin: 0 auto;
+  }
+
+  .catagoriestitle{position: relative;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 60px;
+    color:black
+    ;
+  }
+  .fchorline,
+  .schorline{
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    position: absolute;
+    width :200px;
+    height: 0;
+    top:25px;
+  }
+  .fchorline{
+  left: 300px;
+  }
+  .schorline{
+    right: 300px;
+  }
+  .part{
+    display: inline-grid;
+    grid-gap: 3px;
+    align-content: center;
+    justify-items: start;
+    align-items: center;
+    text-align: left;
+    height: 100%;
+    color: black;
+  }
+  .title{
+    font-size: 2rem;
+  }
+  .article{
+    font-size: 1rem;
+    font-family: sans-serif;
+    margin-right: 50px;
+  }
+  .goto{
+    margin: 8px 0 0 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+
+  }
+  .goto:visited{
+    color: black;
+
+  }
+  .goto:active{
+    color: black;
+  }
+  .clothes{
+  left: 30px;
+  }
+  .cimg,.simg,.eimg{
+    display: inline-grid; ;
+  position: relative;
+  scale: .7;
+    width: 100%;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+  }
+  .catagories{
+    display: grid;
+   grid-template-columns: 1fr 1fr; 
+  width: 100%
+  ;
+    background-image: url('../Untitled-1.svg');
+  background-repeat: no-repeat;
+  background-position: 0;
+  inset: 0;
+  }
+  
+  .shoes{
+    top: 550px;
+    right: 30px;
+  }
+  .electronics,.clothes{
+  position: relative;
+  left: 25px;
+  }
+  .scroll{
+    margin: 0 auto;
+    position: absolute;
+    right: 21px;
+    z-index: 83;
+    width:20px;
+    height: 50px;
+    border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #bb4b00;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+  }
+  .rside{right: 0;
+    top:0;
+    position: absolute;
+    margin-right: 25px;
+  }
+  .account{
+    top:0;
+    right: 0;
+    position: absolute;
+  }
+  
+  
+  .scrolls{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+  }
+  .arect{
+    border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  width:fit-content;
+  height:35px;
+  line-height: 35px;
+  font-size: 1.2rem;
+  overflow: hidden;
+    color:ghostwhite;
+    background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  margin-left: 20px;
+  }
+  .profileimg{
+height: 25px;
+width: 25px;
+border-color: ghostwhite;
+border-width: 2px;
+border-style: solid;
+border-radius: 25px;
+margin-right: 7px;
+}
+  
+.logout{
+    color: ghostwhite;
+    scale: 1.25;
+display: inline;
+cursor: pointer;
+  }
+  .user{
+    top: 9px;
+width:max-content;
+padding: 0 1px;
+height: 40px;
+right:30px;
+display: flex;
+position: absolute;
+align-items: center;
+}
+.note{
+  display: none;
+  position: relative;
+  top: 0;
+  width: 250px;
+  border-color: ghostwhite;
+  padding: 20px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #813300;
+color: ghostwhite;
+text-align: center;
+font-size: x-large;
+z-index: 100;
+margin: 0 auto;
+animation-duration: 0.5s ;
+animation-timing-function: ease-in-out;
+animation-fill-mode: both ;
+}

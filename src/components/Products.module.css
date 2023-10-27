@@ -1,0 +1,35 @@
+.card{
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+.product{ 
+    width: 80%;
+    margin: 30px;
+    min-width: 100px;
+    height: 260px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 14px;
+    padding-left: 14px;
+}
+.img{
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    width: 80%;
+    position: relative;
+    top:0
+    ;display: block;
+    ;margin: 0;
+}
+.price{
+    align-self: end;
+    font-size: 2rem;
+    margin-right: 50px;
+}.price span{
+    font-size: 1rem;
+}

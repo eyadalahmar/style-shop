@@ -1,0 +1,37 @@
+.lang {
+    color: ghostwhite;
+    right: 235px;
+    top: 19px;
+    position: absolute;
+    scale: 1.25;
+  }
+   
+  .langs{
+    font-size: 1rem;
+    line-height: 25px;
+  color: ghostwhite;
+  width: 70px;
+  height: 53px;
+  text-align: center;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;  
+  position: absolute;
+  right: 234px;;
+  top: 50px;
+  }
+  
+  .catagoriesm{
+    font-size: 1rem;
+    line-height: 25px;
+  color: ghostwhite;
+  width:100px;
+  height: 80px;
+  text-align: center;
+  border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;  
+  position: absolute;
+  top: 50px;
+  
+  }

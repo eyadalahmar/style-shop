@@ -1,0 +1,24 @@
+.scroll{
+    margin: 0 auto;
+    position: fixed;
+    right: 0;
+    z-index: 83;
+    width:20px;
+    height: 50px;
+    border-color: ghostwhite;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #bb4b00;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+  }.scrolls{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    z-index: 80;
+  }

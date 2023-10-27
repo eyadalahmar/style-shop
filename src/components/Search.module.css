@@ -1,0 +1,106 @@
+.search{
+    width: 300px;
+    left:85px;
+    margin-top: 5px;
+  background-color: #bb4b00;
+    border-color: ghostwhite;
+    border-width: 1px;
+    height: 25px;
+    border-style: solid;
+    position: absolute;
+    z-index:60;
+    font-family: l;
+  
+  }.searchrel{
+    font-size: 0.8rem;
+    width: 300px;
+    left:85px;
+    color:ghostwhite;
+  background-color: #813300;
+    border-color: ghostwhite;
+    border-width: 1px;
+    z-index: 2;
+    top:44px;
+    min-height:90px;
+    height: auto;
+    max-height: 133px;
+    overflow: scroll;
+    border-style: solid;
+    position: absolute;
+    animation-name: appearing;
+    display: flex;
+    flex-direction: column;
+}
+.ritem{
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    width: 100%;
+    height: auto;
+    margin:0;
+    padding:0
+    ;cursor: pointer
+; transition: background-color 0.1s linear;
+border-collapse: collapse;
+  }
+  .ritem:hover{
+    background-color: #00000034;
+
+  }
+  .img{
+    margin:5px auto;
+    
+width: 27px;
+border-color: ghostwhite;
+border-width: 1px;
+border-style: solid;
+  }
+  .ritem:nth-of-type(n+2){
+    margin-top: -5px;
+
+  }
+      .title{
+        font-size: 0.9rem;
+      }
+      .price{
+        font-size: 0.6rem;
+        color: #ffc7a1;
+      }
+  .search i{
+    z-index: 10;
+  position: relative;
+  top:-3px;
+  left: 3px;
+  scale: 0.95;
+  color: ghostwhite;
+  }
+  
+  .search input{
+    font-family: l;
+  z-index: 3;
+    right: 0;
+    border:none;
+    height: 97%;
+    z-index:6;
+    border: none;
+  position: relative;;
+  width: 90%;
+  background-color: transparent;
+  color: ghostwhite;
+  position: absolute;
+  }
+  .search input:focus{
+    background-color: ghostwhite;
+    color: black;
+    
+  }
+  .searchbox::placeholder{
+    color: ghostwhite;
+    z-index:6;
+    position: relative;
+    font-family: l;
+    
+    }
+    .searchbox::placeholder:focus{
+      background-color: ghostwhite;
+      color: black;
+      }
