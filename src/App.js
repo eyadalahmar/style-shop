@@ -1,4 +1,4 @@
-import { HashRouter, Route,useLocation } from 'react-router-dom';
+import { HashRouter, Route,Routes,useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Purchases from './pages/Purchases';
@@ -15,20 +15,20 @@ const App = () => {
   
 
  return (   
-       <HashRouter>
-          <Route path="/" element={<Home />} Component={Home}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/purchases" element={<Purchases />} />
-          <Route path="/about" element={<About />} />
-          <Route path='/login' element={<Log />} />
-          <Route path='/signup' element={<Sign />} />
-          <Route path='/clothes' element={<Cclothes />} />
-          <Route path='/shoes' element={<Cshoes />} />
-          <Route path='/electronics' element={<Celectronic />} />
-          <Route path='/profile' element={<Profile />} />
+       <Routes>
+          <Route path="/style-shop" element={<Home />} Component={Home}/>
+          <Route path="/style-shop/contact" element={<Contact />}/>
+          <Route path="/style-shop/purchases" element={<Purchases />} />
+          <Route path="/style-shop/about" element={<About />} />
+          <Route path='/style-shop/login' element={<Log />} />
+          <Route path='/style-shop/signup' element={<Sign />} />
+          <Route path='/style-shop/clothes' element={<Cclothes />} />
+          <Route path='/style-shop/shoes' element={<Cshoes />} />
+          <Route path='/style-shop/electronics' element={<Celectronic />} />
+          <Route path='/style-shop/profile' element={<Profile />} />
           <Route path='*'  element={<Nopage />} />
 
-       </HashRouter>
+       </Routes>
  );
 };
 
