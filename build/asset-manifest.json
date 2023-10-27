@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/style-shop/static/css/main.2ab3e208.css",
+    "main.js": "/style-shop/static/js/main.6c190a66.js",
+    "static/media/uniqlo-gb031fe49b_1920.jpg": "/style-shop/static/media/uniqlo-gb031fe49b_1920.6b8b073e72046262be60.jpg",
+    "static/media/clothing-header-image.png": "/style-shop/static/media/clothing-header-image.102adf654b8b04df3eb8.png",
+    "static/media/istockphoto-901863672-612x612 (1).png": "/style-shop/static/media/istockphoto-901863672-612x612 (1).2f1dab4bfac80480875e.png",
+    "static/media/istockphoto-111885949-612x612.jpg": "/style-shop/static/media/istockphoto-111885949-612x612.728f8a6fcbda4e0709af.jpg",
+    "static/media/istockphoto-688948854-612x612.jpg": "/style-shop/static/media/istockphoto-688948854-612x612.8af4db44cbcdfdee7ed1.jpg",
+    "static/media/KyrionPro-Regular.ttf": "/style-shop/static/media/KyrionPro-Regular.1191317ab5839225c3e5.ttf",
+    "static/media/Untitled-1.svg": "/style-shop/static/media/Untitled-1.ad2d7d6a85b882c2ba91.svg",
+    "index.html": "/style-shop/index.html",
+    "main.2ab3e208.css.map": "/style-shop/static/css/main.2ab3e208.css.map",
+    "main.6c190a66.js.map": "/style-shop/static/js/main.6c190a66.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ab3e208.css",
+    "static/js/main.6c190a66.js"
+  ]
+}
