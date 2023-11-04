@@ -29,7 +29,6 @@ class Home extends Component{
   }
   ss=null;
  scroll=()=>{
-  console.log(2222)
   window.scrollTo({top:
    window.innerHeight+40
     ,left:0,behavior:'smooth'}
@@ -246,6 +245,7 @@ return(
       Home | Style Shop
     </title>
     <meta name='description' content='We have a lot of products to view, discover the fashion now!' />
+    <meta name="google-site-verification" content="c_o8YYYgGv2-yxxHoM0DBYSVNqLCzyU2rJVUw92jkfA" />
     <link rel='canonical' href={window.location.href} />
   </Helmet>
 <nav id='nav'>
