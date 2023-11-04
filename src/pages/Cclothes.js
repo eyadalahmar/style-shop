@@ -17,20 +17,22 @@ import store from '../redux/store';
 import Search from '../components/Search';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist'
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Cclothes extends Component {
   constructor() {
     super();
-  
     this.logout = this.logout.bind(this);
   }
   logout=()=>{
     persistor.purge()
     window.location.reload()
   }
- 
 componentDidMount(){
+
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
+
   setTimeout(()=>{
 if(document.querySelector("iframe"))document.querySelector("iframe").style.display="none"
   },3000)
@@ -58,7 +60,7 @@ var observer = new MutationObserver((mutations)=> {
       clearTimeout(this.s1)
       clearTimeout(this.s2)
       clearTimeout(this.s3)
-  
+
       this.s1=setTimeout(()=>{
     
         document.getElementById('note').style.display='block'
@@ -92,7 +94,15 @@ category.render(  <React.StrictMode><Provider store={store}><Products id='1'/></
   
   
 render(){
-        return(<div>
+        return(<Fragment>
+<Helmet>
+    <title>
+      Clothes | Style Shop
+    </title>
+    <meta name='description' content='Browse our latest clothes, buy what suits you!' />
+    <link rel='canonical' href={window.location.href} />
+  </Helmet>
+
           <Scroll />
           <nav className={s.nav}>
       
@@ -134,7 +144,7 @@ render(){
 
 </main>
 <Footer />
-</div>
+</Fragment>
 )
 }}
 const mapStateToProps = (state) => {

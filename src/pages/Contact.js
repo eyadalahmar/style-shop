@@ -14,6 +14,7 @@ import store from '../redux/store';
 import { persistStore } from 'redux-persist'
 import Products from '../components/Products';
 import Search from '../components/Search'
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Contact extends Component {
 
@@ -28,6 +29,7 @@ class Contact extends Component {
   }
 componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
 
     const refresh=()=>{
       document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
@@ -43,7 +45,14 @@ componentDidMount(){
 
 }
 render(){ 
-        return(<div>
+        return(<Fragment>
+          <Helmet>
+    <title>
+      Contact Us | Style Shop
+    </title>
+    <meta name='description' content='Here is our contact page, let us know if you have something to say!' />
+    <link rel='canonical' href={window.location.href} />
+  </Helmet>
           <Scroll />
           <nav className={s.nav}>
              
@@ -96,7 +105,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dolores earum
 
 </main>
 <Footer />
-</div>
+</Fragment>
 )
 }}
 const mapStateToProps=(state)=>{

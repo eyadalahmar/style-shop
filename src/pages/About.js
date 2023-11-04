@@ -1,10 +1,7 @@
-import React,{ Component,useLayoutEffect,useCallback,useEffect, useMemo } from 'react';
-import ReactDOM from 'react-dom/client';
-import { Link ,useLocation} from 'react-router-dom';
+import React,{ Component} from 'react';
+import { Link } from 'react-router-dom';
 import s from './About.module.css'
-import Categories from '../components/Category';
 import { Fragment } from 'react';
-import { Navigate } from 'react-router-dom';
 import Scroll from '../components/scroll';
 import Catalang from '../components/Catalang'
 import Footer from '../components/Footer';
@@ -14,6 +11,7 @@ import store from '../redux/store';
 import { persistStore } from 'redux-persist'
 import Search from '../components/Search';
 import Products from '../components/Products';
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class About extends Component {
   constructor() {
@@ -30,6 +28,8 @@ class About extends Component {
   componentDidMount(){
   
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
+
     const refresh=()=>{
       document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
       document.querySelector('#catagoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
@@ -56,11 +56,16 @@ class About extends Component {
 }
 
  render(){
-        return(<div>
+        return(<Fragment>
+          <Helmet>
+    <title>
+      About | Style Shop
+    </title>
+    <meta name='description' content='A summary about our store, Style Shop.' />
+    <link rel='canonical' href={window.location.href} />
+  </Helmet>
           <Scroll />
           <nav className={s.nav}>
-        
-      
            <Link to='/'>
       <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
       </Link>      
@@ -70,12 +75,8 @@ class About extends Component {
       <Catalang>catt</Catalang>
         <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
       <li> <Link to="/contact">Contact Us</Link></li>       
-        
       </ul><div className={s.rside} id="rside">
-        
       <Catalang>langi</Catalang>
-
-        
         <div className={s.account} id="account">
         {this.props.account?<div className={s.user}>
           <i class={`${"fa-thin fa-arrow-right-from-bracket"} ${s.logout}`} onClick={this.logout}></i>
@@ -116,7 +117,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error dolores ali
 
 </main>
 <Footer />
-</div>
+</Fragment>
 )
 }}
 const mapStateToProps=(state)=>{

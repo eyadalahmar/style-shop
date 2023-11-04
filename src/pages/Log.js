@@ -13,7 +13,7 @@ import { setCash } from '../redux/cash';
 import { setInfo } from '../redux/accountInfo';
 import { connect } from 'react-redux';
 import { createPurList } from '../redux/purchases';
-
+import { Helmet } from 'react-helmet-async';
 class Log extends Component{
   constructor() {
     super();
@@ -38,6 +38,7 @@ class Log extends Component{
     }
     componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
 
       if(!this.props.account){ 
         const refresh=()=>{
@@ -127,7 +128,15 @@ valid=()=>{
 
 
  render(){
-   return(<div>{this.props.account?<h1>You're already logged in{this.state.ser&&<Navigate to="/" />}</h1>:<Fragment>
+   return(<Fragment>
+    <Helmet>
+    <title>
+      Log In | Style Shop
+    </title>
+    <meta name='description' content='Log in page' />
+    <meta name='robots' content='noindex' />
+  </Helmet>
+    {this.props.account?<h1>You're already logged in{this.state.ser&&<Navigate to="/" />}</h1>:<Fragment>
     <Scroll />
     <nav className={s.nav}>
              
@@ -183,7 +192,7 @@ valid=()=>{
 </main>
 <Footer />
 </Fragment>}
-</div>
+</Fragment>
 )
 }}
 const mapStateToProps=(state)=>{

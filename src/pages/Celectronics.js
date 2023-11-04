@@ -16,6 +16,7 @@ import store from '../redux/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist'
 import Search from '../components/Search';
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Celectronic extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class Celectronic extends Component {
   }
   componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
 
     setTimeout(()=>{
       if(document.querySelector("iframe"))document.querySelector("iframe").style.display="none"
@@ -80,8 +82,14 @@ const category= ReactDOM.createRoot(document.getElementById('category'))
 category.render(  <React.StrictMode><Provider store={store}><Products id='2'/></Provider></React.StrictMode>)
 }
 render(){ 
-        return(<div>
-          
+        return(<Fragment>
+          <Helmet>
+    <title>
+      Electronics | Style Shop
+    </title>
+    <meta name='description' content='Add the technology to your outfit' />
+    <link rel='canonical' href={window.location.href} />
+  </Helmet>
           <nav className={s.nav}>
           <Scroll />
                
@@ -126,7 +134,7 @@ render(){
 <div id="category"></div>
 
 </main>
-<Footer /></div>
+<Footer /></Fragment>
 )
 }
 }

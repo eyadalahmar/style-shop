@@ -15,6 +15,7 @@ import s from './Purchases.module.css'
 import { persistStore } from 'redux-persist'
 import Search from '../components/Search';
 import Products from '../components/Products';
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Purchases extends Component {
   constructor() {
@@ -30,6 +31,7 @@ class Purchases extends Component {
   }
 componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
 
   const refresh=()=>{
       document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
@@ -43,7 +45,14 @@ window.onresize=refresh;
 }
 render(){
   
-  return(<div>
+  return(<Fragment>
+    <Helmet>
+    <title>
+      Purchases | Style Shop
+    </title>
+    <meta name='description' content='Your purchases list' />
+    <meta name='robots' content='noindex' />
+  </Helmet>
           <Scroll />
           <nav className={s.nav}>
             
@@ -96,7 +105,7 @@ render(){
 {this.props.account&&this.props.purList!=[]&&<div className={s.bnote}>Adding more columns (e.g. purchase date) requires back-end features</div> }
 </main>
 <Footer />
-</div>
+</Fragment>
 )
 }
 

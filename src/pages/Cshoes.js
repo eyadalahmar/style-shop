@@ -18,6 +18,7 @@ import store from '../redux/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist'
 import Search from '../components/Search';
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Cshoes extends Component {
   constructor() {
@@ -30,6 +31,7 @@ class Cshoes extends Component {
   }
 componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
   
   setTimeout(()=>{
     if(document.querySelector("iframe"))document.querySelector("iframe").style.display="none"
@@ -85,7 +87,14 @@ category.render(  <React.StrictMode><Provider store={store}><Products id='4'/></
 }
 render(){
  
-        return(<div>
+        return(<Fragment>
+          <Helmet>
+    <title>
+      Shoes | Style Shop
+    </title>
+    <meta name='description' content='Browse our luxury shoes, walk comfortably!' />
+    <link rel='canonical' href={window.location.href} />
+  </Helmet>
           <Scroll />
           <nav className={s.nav}>
       
@@ -131,7 +140,7 @@ render(){
 
 </main>
 <Footer />
-</div>
+</Fragment>
 )
 }
 }

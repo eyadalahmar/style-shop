@@ -28,6 +28,45 @@
     position: relative;
   
   }
+
+  .main::before{
+    content: '';
+    background-image: url('../istockphoto-901863672-612x612\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    inset: 0;
+    position: absolute;
+  z-index: 2;;
+  
+  }
+
+  .main::after{
+    content: '';
+    background-color: #5c2401;
+    z-index:2;
+    opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  } 
+  
+  .main div{
+  position: absolute;
+  top: 80px;
+  left: 25px;
+  color: ghostwhite;
+  z-index: 3;
+  font-size: 9rem
+  }
+  .main span{
+    z-index: 4;
+   
+    display: block;
+    left: 18rem;
+    position: absolute;
+  }
+
   .log,.sign{
     position: absolute;
     top: 10px;
@@ -193,6 +232,13 @@
   background-position: 0;
   inset: 0;
   }
+  .catagories img:nth-of-type(2n) {
+    right: 60px;
+  }
+  
+  .catagories img:nth-of-type(2n-1) {
+    left: 60px;
+  }
   
   .shoes{
     top: 550px;
@@ -218,6 +264,16 @@
   flex-direction: column;
   align-items: center;
   font-size: small;
+  }
+  .scroll::after{
+      
+    content: '';
+    background-color: #5c2401;
+    z-index:3;
+    opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   }
   .rside{right: 0;
     top:0;
@@ -299,4 +355,21 @@ margin: 0 auto;
 animation-duration: 0.5s ;
 animation-timing-function: ease-in-out;
 animation-fill-mode: both ;
+}
+
+  .goto i{
+  position: relative;
+  top: 3px;
+  left:5px;
+  }
+  
+.dscroll{
+  bottom: 100px;
+  margin: 0 auto;
+  position: absolute;
+width: 65px;
+height: 70px;
+left: 0;
+  right: 0;
+  z-index: 10 ;
 }

@@ -12,6 +12,7 @@ import Footer from '../components/Footer';
 import Catalang from '../components/Catalang';
 import { setInfo } from '../redux/accountInfo';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet-async';
 class Sign extends Component{
   constructor() {
     super();
@@ -22,6 +23,7 @@ class Sign extends Component{
   }
 componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+  document.querySelector('#catagoriesm').style.setProperty('display','none')
 
   if(!this.props.account){
   
@@ -89,7 +91,15 @@ return yup.object().shape({
 
 }
 render(){
-        return(<div>{this.props.account?<h1>You're already logged in</h1>:<Fragment> /<nav className={s.nav}>
+        return(<Fragment>
+          <Helmet>
+    <title>
+      Sign In | Style Shop
+    </title>
+    <meta name='description' content='Sign in page' />
+    <meta name='robots' content='noindex' />
+  </Helmet>
+          {this.props.account?<h1>You're already logged in</h1>:<Fragment> /<nav className={s.nav}>
 <Scroll />
            <Link to='/'>
       <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
@@ -127,7 +137,7 @@ render(){
 </main>
 <Footer />
       </Fragment>}
-</div>
+</Fragment>
 )
 }}
 const mapStateToProps=(state)=>{

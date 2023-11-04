@@ -13,6 +13,7 @@ import { setCash } from '../redux/cash'
 import { setInfo } from '../redux/accountInfo';
 import { connect } from 'react-redux';
 import { persistStore } from 'redux-persist'
+import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Profile extends Component{
   constructor() {
@@ -27,6 +28,7 @@ class Profile extends Component{
 componentDidMount(){
     this.setState({cash:this.props.cash})
     if(!localStorage.getItem('re'))localStorage.setItem('re','*')
+    document.querySelector('#catagoriesm').style.setProperty('display','none')
 
   if(this.props.account){
     const refresh=()=>{
@@ -70,7 +72,15 @@ logout=()=>{
 }
 
 render(){
-        return(<div>{!this.props.account?<h1>Please <Link to='/login'>log in{this.state.re&&<Navigate to='/' />}</Link> first</h1>:<Fragment> <nav className={s.nav}>
+        return(<Fragment>
+          <Helmet>
+    <title>
+      Profile | Style Shop
+    </title>
+    <meta name='description' content='Profile page' />
+    <meta name='robots' content='noindex' />
+  </Helmet>
+          {!this.props.account?<h1>Please <Link to='/login'>log in{this.state.re&&<Navigate to='/' />}</Link> first</h1>:<Fragment> <nav className={s.nav}>
 <Scroll />
            <Link to='/'>
       <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
@@ -119,7 +129,7 @@ render(){
 </main>
 <Footer />
       </Fragment>}
-</div>
+</Fragment>
 )
 }}
 

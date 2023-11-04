@@ -33,5 +33,27 @@
   border-style: solid;  
   position: absolute;
   top: 50px;
+  z-index: 300;
   
   }
+  .catagoriesm *{
+    color: ghostwhite;
+      }
+      .lhorline{
+        height: 0;
+        border-bottom-color: ghostwhite;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        width: 55px;
+         margin: 0 auto;
+      }
+      .fmhorline,.smhorline{
+      
+        height: 0;
+        border-bottom-color: ghostwhite;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        width: 80px;
+         margin: 0 auto;
+      }
+    
