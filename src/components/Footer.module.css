@@ -1,7 +1,17 @@
-.footer{ padding-top: 20px;
+:root{
+  --footer-height:45px ;
+  --footer-img-width:100px;
+--footer-a-img-left:245px;
+--footer-translate:0
+;--footer-width:2px;
+--footer-padding:20px
+;--footer-radius:5px;
+}
+.footer{ 
+  padding-top: var(--footer-padding);
     color: ghostwhite;
     display: block;
-    height: 45px;
+    height: var(--footer-height);
     width: 100%;
     margin-top: 75px;
     background-color: black;
@@ -10,21 +20,84 @@
     border-top-style: solid;
   overflow: hidden;
   }
-  .footer img{
-position: absolute;
-  margin: 0;
-  top: 10px;
+  .footer > img{
+    position: absolute;
+translate: var(--footer-translate);
+    margin: 0;
+    top: 12px;
     right: 25px;
-    width: 100px;
-  
+    width: var(--footer-img-width);
+    
   }
   .img{
-    left: 245px;
+    margin: 0;
+    width: var(--footer-img-width);
+translate:var(--footer-translate);
+    position: absolute;
+    left: var(--footer-a-img-left);
     border-color: white;
-    border-width: 2px;
+    border-width: var(--footer-width);
     border-style: solid;
-    border-radius: 5px;
+    border-radius: var(--footer-radius);
     padding: 2px;
     top:12px;
     scale: 0.6  ;
   }
+  [rtl="true"] .footer > img{
+    right: unset;
+    left: 25px !important;
+  }
+  [rtl="true"] .footer{ 
+direction: rtl;
+    }
+
+    [rtl="true"]  .img{
+      right: calc( var(--footer-a-img-left) + 40px);
+    left: unset;
+    }
+  @media (max-width:500px) {
+    :root{
+  --footer-height:25px ;
+  --footer-img-width:70px;
+  --footer-a-img-left:200px;
+--footer-translate:0 -3px;
+  --footer-width:1px;
+    }
+    .footer{
+      font-size:13px;
+line-height: 13px;
+    }
+  }
+  @media (max-width:365px) {
+    :root{
+      --footer-padding:15px;
+      --footer-height:20px;
+  --footer-a-img-left:150px;
+--footer-translate:0 -6px;
+--footer-img-width:50px;
+;--footer-radius:3px;
+
+
+    }
+    .footer{
+      font-size:10px;
+line-height: 10px;
+margin-top: 40px;
+    }
+  }
+    @media (max-width:275px) {
+      :root{
+        --footer-padding:8px;
+        --footer-height:15px;
+    --footer-a-img-left:122px;
+  --footer-translate:0 -10px;
+  --footer-img-width:35px;
+  ;--footer-radius:3px;
+  
+  
+      }
+      .footer{
+        font-size:8px;
+  line-height: 8px;
+      }
+    }

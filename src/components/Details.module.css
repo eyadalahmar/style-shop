@@ -1,3 +1,14 @@
+:root{
+  --dbox-width:81%;
+  --columns:1fr 1.7fr;
+  --desc:1.5rem
+  ;--title:4rem;
+--price:1.5rem
+;--button-margin:40px;
+--button-rmargin:40px;
+--line:260px;
+--close-margin:20px
+}
 .detail {
   display: flex ;
   position: fixed;
@@ -16,18 +27,20 @@
   top: 0;
   right: 0;
   scale: 2;
-  margin: 20px;
+  margin: var(--close-margin)
+;
 }
 
 .dbox {
   border-color: black;
   display: grid;
-  grid-template-columns: 1fr 1.7fr;
+  grid-template-columns: var(--columns);
   border-width: 3px;
   border-style: solid;
-  width: 81%;
+  width: var(--dbox-width);
   height: 90%;
   background-color: ghostwhite;
+  align-items: center;
 }
 
 .photos {
@@ -37,9 +50,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 91%;
-  height: 95%;
+  height:min-content;
   left: 0;
-
+justify-items: center;
 }
 
 .fimg,
@@ -48,49 +61,52 @@
   display: block;
   z-index: 101;
   width: 100%;
+  border: ghostwhite 5px solid;
 }
 
 .fimg {
   grid-column: span 2;
-  margin-bottom: -5px;
-
+align-self: center;
+text-align: center;
+justify-self:right;
+border: none;
 }
 
-.timg {
-  margin-left: 5px;
+.simg {
+  border-left: none;
 }
 .desc{
-  font-size: 1.5rem;
+  font-size: var(--desc);
 }
 .details {
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 20px;
   justify-content: space-between;
 }
 
 .title {
-  font-size: 4rem;
+  margin-top: 10px;
+  font-size: var(--title);
 }
 
 .price {
-  margin-right: 50px;
   margin-left: 12px;
 text-align: left;
-line-height: 260px;
-font-size:x-large;
+width: max-content;
+line-height: var(--line);
+font-size:var(--price)
 }
 
 .price span {
 
-  font-size: 4rem;
+  font-size: var(--title);
 }
 
 
 .button {
-  margin-bottom: 48px;
-  margin-right: 50px;
+  margin-bottom: var(--button-margin);
+  margin-right: var(--button-rmargin);
   align-self: flex-end;
   border-color: black;
   border-width: 2px;
@@ -110,6 +126,7 @@ font-size:x-large;
   display: grid;
   grid-template-columns: 1fr 1fr ; 
   box-sizing: border-box;;
+  height:min-content;
 }
 .logmess{
   color: #dd0000;
@@ -121,4 +138,54 @@ font-size:x-large;
 }
 .flex{
 margin-top: auto;
+}
+@media (max-width:1000px) {
+  :root{
+--dbox-width:91%;
+--close-margin:10px
+  }
+}@media (max-width:900px) {
+  :root{
+    --columns:1fr 1.1fr;
+--desc:1.2rem
+;--title:3rem;
+--price:1.2rem;
+--button-margin:20px;
+--button-rmargin:20px;
+--line:200px
+  }
+  
+}@media (max-width:575px) {
+  :root{
+--title:2.1rem;
+--desc:1rem
+
+  }}
+  @media (max-width:500px) {
+    .dbox{
+      overflow: scroll;
+    }
+   
+  }
+  
+@media (max-width:500px) {
+  :root{
+  --columns:1fr;
+--button-rmargin: -10px;
+--button-margin: 5px;
+--line:150px
+  }
+  .photos{
+    margin: 60px auto -60px auto;
+    scale: 0.9;
+
+  }
+  .button{
+    scale: 0.7;
+  }
+}
+@media (max-width:500px) {
+  .photos{
+  scale: 1;
+  }
 }

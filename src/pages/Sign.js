@@ -6,33 +6,52 @@ import Categories from '../components/Category';
 import {Formik, Field, Form} from "formik"
 import * as yup from 'yup'
 import { Fragment } from 'react';
-import { Navigate } from 'react-router-dom';
 import Scroll from '../components/scroll';
 import Footer from '../components/Footer';
 import Catalang from '../components/Catalang';
-import { setInfo } from '../redux/accountInfo';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 class Sign extends Component{
   constructor() {
     super();
     this.state = {
-      re: false
+      re: false,
+      ww: null,
+
     };
     this.submit = this.submit.bind(this);
   }
 componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
-  document.querySelector('#catagoriesm').style.setProperty('display','none')
+  document.querySelector('#categoriesm').style.setProperty('display','none')
 
   if(!this.props.account){
   
     const refresh=()=>{
       document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
-      document.querySelector('#catagoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
-      document.querySelector('#langs').style.setProperty('display','none')
-      document.querySelector('#catagoriesm').style.setProperty('display','none')
+      document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+      document.querySelector('#categoriesm').style.setProperty('display','none')
+     
+    
+      this.setState({ ww: window.innerWidth })
+        
+      if(this.state.ww>1210){
       }
+      else{ 
+       document.querySelector('#lists').style.setProperty('left', "" + window.innerWidth / 2 - 150 + 'px')
+       document.querySelector('#categoriesm').style.setProperty('left', "" + window.innerWidth / 2 -185 + 'px')
+  
+      }
+  
+      if(this.state.ww<875){
+  
+      document.querySelector('#lists').style.setProperty('left', '70px')
+      document.querySelector('#categoriesm').style.setProperty('left','97px')
+  
+    } 
+    
+    
+    }
     refresh()
 window.onresize=refresh;
 document.addEventListener('keydown',(a)=>{
@@ -96,29 +115,38 @@ render(){
     <title>
       Sign In | Style Shop
     </title>
-    <meta name='description' content='Sign in page' />
+    <meta name='description' content='Sign in page.consectetur adipisicing elit. Eligendi dignissimos at, porro voluptatum dolore facere pariatur repudiandae adipisci nostrum.' />
+    <meta name="keywords" content='fashion, discover, clothes, shoes, electronics, category, style shop, ecommerce, buy, search, shopping, sign up'/>
+   
     <meta name='robots' content='noindex' />
   </Helmet>
           {this.props.account?<h1>You're already logged in</h1>:<Fragment> /<nav className={s.nav}>
 <Scroll />
            <Link to='/'>
-      <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
+      <img alt='Website logo' className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
       </Link>
       <ul className={s.lists} id="lists">
-      <Catalang>catt</Catalang>
+      {this.state.ww < 1210 ? <Fragment>
 
-        <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
-        <li><Link to="/about" >About</Link></li>
-      <li> <Link to="/contact">Contact Us</Link></li>       
-        
+            <li className={s.categoriest} ><i id="categoriest" class="fa-thin fa-cards-blank"></i></li>
+            <li><Link to="/purchases" className={s.purchases}><i class="fa-thin fa-cart-shopping"></i></Link></li>
+            <li><Link to="/about" ><i class="fa-thin fa-info"></i></Link></li>
+            <li>  <Link to="/contact" className={s.contact} id="contact" ><i class="fa-thin fa-phone"></i></Link></li>
+          </Fragment>
+            :
+            <Fragment>
+              <li className={s.categoriest} id="categoriest">Categories</li>
+              <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
+              <li><Link to="/about" >About</Link></li>
+              <li><Link to="/contact" className={s.contact} id="contact">Contact Us<span id="mark"></span></Link></li>
+            </Fragment>
+          }
       </ul><div className={s.rside} id="rside">
         
-      <Catalang>langi</Catalang>
 
       
       </div>
       <Catalang>catm</Catalang>
-      <Catalang>langs</Catalang>
 
 </nav>
 <main className={s.main}>

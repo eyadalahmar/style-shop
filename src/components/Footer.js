@@ -20,10 +20,10 @@ var config = { attributes: true, childList: true, characterData: true, subtree: 
 observer.observe(document.documentElement, config);
 
 return(
-<footer className={s.footer}>
-        © 2023 Style Shop. All rights reserved.
-       <a href='https://fakeapi.platzi.com/' target='_blank'> <img className={s.img} src='./Platzi-logo.png'/></a>
-        <img src='./a.png' />
+<footer className={s.footer}><div>
+    © 2023 Style Shop. <span id="footertext">All rights reserved</span>.<a href='https://fakeapi.platzi.com/' target='_blank'><img alt='Used api' className={s.img} src='./style-shop/Platzi-logo.png'/></a>
+</div>
+        <img alt='Style Shop logo' src='./style-shop/a.png' />
       </footer>)
       }
 

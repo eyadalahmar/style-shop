@@ -9,7 +9,7 @@
     border-style: solid;
     position: absolute;
     z-index:60;
-    font-family: l;
+    font-family: l,ar;
   
   }
   .search::after{
@@ -109,10 +109,53 @@ border-style: solid;
     color: ghostwhite;
     z-index:6;
     position: relative;
-    font-family: l;
+    font-family: l,ar;
     
     }
     .searchbox::placeholder:focus{
       background-color: ghostwhite;
       color: black;
       }
+
+
+      [rtl='true'] .search,[rtl='true'] .searchrel{
+        right: 85px;
+      }
+      
+      @media (max-width:887px) {
+       
+       
+        .searchrel{
+    left:70px;
+          
+        }
+
+
+      }
+      
+   @media (max-width:450px) {
+        .search{
+  width: 200px;
+  top: 6px;
+  left: 10px;
+  margin: 0;
+ }
+
+ .search input{
+width: 85%;
+}
+.searchrel{
+  width: 200px;
+  top: 10px;
+  left: 10px;
+
+}
+.ritem{
+  grid-template-columns: 1fr 5fr;
+
+}
+
+ [rtl="true"] .searchrel,  [rtl='true'] .search{
+right: 10px;
+}
+}

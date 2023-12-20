@@ -12,13 +12,11 @@
   display: block;
   text-align: left;
   align-items: start;
-  width: 150px;
+  width: max-content;
   word-wrap: unset;
 }
 
-.lists {
-  width: 500px;
-}
+
 
 .sign {
   right: 30px;
@@ -90,12 +88,11 @@
   height: 100%;
   width: 100%;
   top: 0;
-
   position: absolute;
 }
 
 .signup {
-  width: 50%;
+  width: 90%;
   max-width: 400px;
   top: 100px;
   border-color: black;
@@ -169,4 +166,23 @@
   min-height: 25px;
   line-height: 20px;
   cursor: pointer;
+}
+@media (max-width:350px) {
+ 
+.signt {
+  font-size: 2rem;
+}
+.name,
+.email,
+.password {
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.sinput {
+  height: 21px;
+}
+.login{
+  font-size: 0.8rem;
+}
 }

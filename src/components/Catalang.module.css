@@ -21,7 +21,7 @@
   top: 50px;
   }
   
-  .catagoriesm{
+  .categoriesm{
     font-size: 1rem;
     line-height: 25px;
   color: ghostwhite;
@@ -36,7 +36,7 @@
   z-index: 300;
   
   }
-  .catagoriesm *{
+  .categoriesm *{
     color: ghostwhite;
       }
       .lhorline{
@@ -56,4 +56,11 @@
         width: 80px;
          margin: 0 auto;
       }
+    @media (max-width:450px) {
+      .categoriesm{
+        scale:1 ;
+        translate: -50px -30px !important;
+          }
+        }
+        
     

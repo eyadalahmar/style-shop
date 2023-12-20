@@ -20,25 +20,44 @@ class Profile extends Component{
     super();
     this.state = {
       
-      cash: null
+      cash: null,
+      ww: null,
+
     };
    this.logout=this.logout.bind(this)
 }
 
 componentDidMount(){
-    this.setState({cash:this.props.cash})
-    if(!localStorage.getItem('re'))localStorage.setItem('re','*')
-    document.querySelector('#catagoriesm').style.setProperty('display','none')
+  if(!localStorage.getItem('re'))localStorage.setItem('re','*')
 
-  if(this.props.account){
-    const refresh=()=>{
+if(this.props.account){
+  this.setState({cash:this.props.cash})
+  const refresh=()=>{
       document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
-      document.querySelector('#catagoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
-      document.querySelector('#langs').style.setProperty('display','none')
-      document.querySelector('#catagoriesm').style.setProperty('display','none')
+      document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+      document.querySelector('#categoriesm').style.setProperty('display','none')
+      this.setState({ ww: window.innerWidth })
+        
+      if(this.state.ww>1210){
       }
+      else{ 
+       document.querySelector('#lists').style.setProperty('left', "" + window.innerWidth / 2 - 150 + 'px')
+       document.querySelector('#categoriesm').style.setProperty('left', "" + window.innerWidth / 2 -185 + 'px')
+  
+      }
+  
+      if(this.state.ww<875&&this.state.ww>0){
+  
+      document.querySelector('#lists').style.setProperty('left', '70px')
+      document.querySelector('#categoriesm').style.setProperty('left','97px')
+  
+    } 
+      
+    }
     refresh()
-window.onresize=refresh;
+window.onresize=()=>{refresh()
+console.log(this.state.ww)
+};
 
 }}
 click=()=>{
@@ -77,41 +96,55 @@ render(){
     <title>
       Profile | Style Shop
     </title>
-    <meta name='description' content='Profile page' />
+    <meta name='description' content='Profile pageconsectetur adipisicing elit. Eligendi dignissimos at, porro voluptatum dolore facere pariatur repudiandae adipisci nostrum,looooorem.' />
+    <meta name="keywords" content='fashion, discover, clothes, shoes, electronics, category, style shop, ecommerce, buy, search, shopping, log in'/>
+    
     <meta name='robots' content='noindex' />
   </Helmet>
           {!this.props.account?<h1>Please <Link to='/login'>log in{this.state.re&&<Navigate to='/' />}</Link> first</h1>:<Fragment> <nav className={s.nav}>
 <Scroll />
            <Link to='/'>
-      <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
+      <img alt='Website logo' className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
 
       </Link>
       <ul className={s.lists} id="lists">
-      <Catalang>catt</Catalang>
+      {this.state.ww < 1210 ? <Fragment>
 
-        <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
-        <li><Link to="/about" >About</Link></li>
-      <li> <Link to="/contact">Contact Us</Link></li>       
-        
+            <li className={s.categoriest} ><i id="categoriest" class="fa-thin fa-cards-blank"></i></li>
+            <li><Link to="/purchases" className={s.purchases}><i class="fa-thin fa-cart-shopping"></i></Link></li>
+            <li><Link to="/about" ><i class="fa-thin fa-info"></i></Link></li>
+            <li>  <Link to="/contact" className={s.contact} id="contact" ><i class="fa-thin fa-phone"></i></Link></li>
+          </Fragment>
+            :
+            <Fragment>
+              <li className={s.categoriest} id="categoriest">Categories</li>
+              <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
+              <li><Link to="/about" >About</Link></li>
+              <li><Link to="/contact" className={s.contact} id="contact">Contact Us<span id="mark"></span></Link></li>
+            </Fragment>
+          }
       </ul><div className={s.rside} id="rside">
         
-      <Catalang>langi</Catalang>
-
-      
       </div>
       <Catalang>catm</Catalang>
-      <Catalang>langs</Catalang>
       <div className={s.note} id='note'></div>
 
 </nav>
 <main className={s.main}>
     <div className={s.profile}><div className={s.profilet}>Profile</div>
-  <div className={s.grid}>
+    <div className={s.grid}>
+  {this.state.ww>375&&
     <div className={s.pic}>
         <img className={s.profileimg} src={this.props.account.avatar} />
 
-    </div>
+    </div>}
     <div className={s.profiled}>
+      {this.state.ww<=375&&
+      <div className={s.pic}>
+        <img className={s.profileimg} src={this.props.account.avatar} />
+
+    </div>
+      }
         <div><span>Name:</span> {this.props.account.name}</div>
         <div><span>Email:</span> {this.props.account.email}</div>
         <div><span>Role:</span> {this.props.account.role}</div>

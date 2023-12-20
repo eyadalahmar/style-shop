@@ -22,6 +22,7 @@ class Log extends Component{
       ser:false,
       fet:true,
       data:[{email:"Loading...",password:"Loading..."}],
+      ww: null,
     };
     this.sumbit = this.sumbit.bind(this);
   }
@@ -38,16 +39,34 @@ class Log extends Component{
     }
     componentDidMount(){
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
-  document.querySelector('#catagoriesm').style.setProperty('display','none')
+  document.querySelector('#categoriesm').style.setProperty('display','none')
 
       if(!this.props.account){ 
         const refresh=()=>{
           document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
-      document.querySelector('#catagoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
-      document.querySelector('#langs').style.setProperty('display','none')
-
-         }
-    refresh()
+      document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+      this.setState({ ww: window.innerWidth })
+        
+      if(this.state.ww>1210){
+      }
+      else{ 
+       document.querySelector('#lists').style.setProperty('left', "" + window.innerWidth / 2 - 150 + 'px')
+       document.querySelector('#categoriesm').style.setProperty('left', "" + window.innerWidth / 2 -185 + 'px')
+  
+      }
+  
+      if(this.state.ww<875){
+  
+      document.querySelector('#lists').style.setProperty('left', '70px')
+      document.querySelector('#categoriesm').style.setProperty('left','97px')
+  
+    } 
+    
+    }
+   setTimeout(() => {
+    
+     refresh()
+   }, 100);
 window.onresize=refresh
 document.querySelector('table').style.display='none'
 document.addEventListener('keydown',(a)=>{
@@ -64,7 +83,6 @@ document.addEventListener('keydown',(a)=>{
 }}
 
 sumbit (a){
-  console.log(a)
   this.setState({ser:true})
   
   let b=document.getElementById('email')
@@ -133,7 +151,9 @@ valid=()=>{
     <title>
       Log In | Style Shop
     </title>
-    <meta name='description' content='Log in page' />
+    <meta name='description' content='Log in pageconsectetur adipisicing elit. Eligendi dignissimos at, porro voluptatum dolore facere pariatur repudiandae adipisci nostrum,loooorem' />
+    <meta name="keywords" content='fashion, discover, clothes, shoes, electronics, category, style shop, ecommerce, buy, search, shopping,log in'/>
+   
     <meta name='robots' content='noindex' />
   </Helmet>
     {this.props.account?<h1>You're already logged in{this.state.ser&&<Navigate to="/" />}</h1>:<Fragment>
@@ -141,23 +161,30 @@ valid=()=>{
     <nav className={s.nav}>
              
            <Link to='/'>
-      <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
+      <img alt='Website logo' className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
       </Link>
       <ul className={s.lists} id="lists">
-      <Catalang>catt</Catalang>
+      {this.state.ww < 1210 ? <Fragment>
 
-        <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
-        <li><Link to="/about" >About</Link></li>
-      <li> <Link to="/contact">Contact Us</Link></li>       
-        
+            <li className={s.categoriest} ><i id="categoriest" class="fa-thin fa-cards-blank"></i></li>
+            <li><Link to="/purchases" className={s.purchases}><i class="fa-thin fa-cart-shopping"></i></Link></li>
+            <li><Link to="/about" ><i class="fa-thin fa-info"></i></Link></li>
+            <li>  <Link to="/contact" className={s.contact} id="contact" ><i class="fa-thin fa-phone"></i></Link></li>
+          </Fragment>
+            :
+            <Fragment>
+              <li className={s.categoriest} id="categoriest">Categories</li>
+              <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
+              <li><Link to="/about" >About</Link></li>
+              <li><Link to="/contact" className={s.contact} id="contact">Contact Us<span id="mark"></span></Link></li>
+            </Fragment>
+          }
       </ul><div className={s.rside} id="rside">
         
-      <Catalang>langi</Catalang>
 
       
       </div>
       <Catalang>catm</Catalang>
-      <Catalang  style={{right:'208px'}}>langs</Catalang>
 </nav>
 <main className={s.main} id="mainb">
     <div className={s.login}><div className={s.logt}>Log In</div>

@@ -1,5 +1,4 @@
 .scroll{
-    margin: 0 auto;
     position: fixed;
     right: 0;
     z-index: 83;
@@ -16,3 +15,7 @@
   font-size: small;
   color: ghostwhite;
   }
+
+  [rtl='true'] .scroll{
+    left: 0 ;
+    }

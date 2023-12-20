@@ -16,6 +16,9 @@ function Products() {
   const account=useSelector(state=>state.accountInfo.account)
   const itemi=useSelector(state=>state.item.itemi)
   const results=useSelector(state=>state.search.results)
+  const errorHandle=(e)=>{
+   e.target.src='https://placehold.co/400x400/'+'ABCD'[Math.floor(Math.random()*4)]+'ABCDEF'[Math.floor(Math.random()*6)]+Math.floor(Math.random()*7)+Math.floor(Math.random()*8)+'22/ghostwhite/png?text=Style+Shop%0A+%0ANo+image&font=raleway'
+  }
   const [{ data, loading, error }, refetch] = useAxios('https://api.escuelajs.co/api/v1/products')
   var i=null
   var j,jjj
@@ -48,7 +51,11 @@ function Products() {
   }
   i= document.getElementsByClassName('i')
       for(let a of i)a.addEventListener('click',(b)=>{
+       document.querySelector('body').style.overflow='hidden'
         for (j=0;;j++)if (dataf[j].id==parseInt(a.id))break;
+        document.getElementById('fimg').src=''
+        document.getElementById('simg').src=''
+        document.getElementById('timg').src=''
         document.getElementById('fimg').src=dataf[j].images[0]
         document.getElementById('simg').src=dataf[j].images[1]
         document.getElementById('timg').src=dataf[j].images[2]
@@ -139,9 +146,17 @@ if (loading) return <span>Loading...</span>
 if(error) return <span>error</span>
 
 if(arguments[0].id) var dataf=data.filter(a=>a.category.id==parseInt(arguments[0].id))
-
-return ( <div className={s.card}>  {dataf.length==0?<div style={{width:'100%',marginTop:'20px',position:'absolute',fontSize:'x-large'}}>There is no products from this catagory currently (according to the API)</div>:<Fragment>
-  {dataf.map(a=><div id={`${a.id}`} key={`${a.id}`} className={`${s.product} i`}><img className={s.img} src={JSON.stringify(a.images[0]).slice(1,(a.images[0].length)+1)}/>{
+if(arguments[0].tagId) 
+{
+  setTimeout(() => {if(document.getElementById(arguments[0].tagId)){
+    let a=Math.floor(Math.random()*5)
+    if(dataf[a])
+    document.getElementById(arguments[0].tagId).src=dataf[a].images[0];
+  else document.getElementById(arguments[0].tagId).src='https://placehold.co/400x400/' + 'ABCD'[Math.floor(Math.random() * 4)] + 'ABCDEF'[Math.floor(Math.random() * 6)] + Math.floor(Math.random() * 7) + Math.floor(Math.random() * 8) + '22/ghostwhite/png?text=Style+Shop%0A+%0ANo+image&font=raleway' 
+}}, 200);
+  return null} 
+return ( <div className={s.card}>  {dataf.length==0?<div style={{width:'100%',marginTop:'20px',position:'absolute',fontSize:'x-large'}}>There is no products from this category currently (according to the API)</div>:<Fragment>
+  {dataf.map(a=><div id={`${a.id}`} key={`${a.id}`} className={`${s.product} i`}><img alt={a.id} id={`img${a.id}`} className={s.img} onError={errorHandle} src={JSON.stringify(a.images[0]).slice(1,(a.images[0].length)+1)}/>{
 JSON.stringify(a.title).slice(1,(a.title.length)+1)}
 <div></div>
 <div className={s.price}>{JSON.stringify(a.price)}<span>$</span></div>

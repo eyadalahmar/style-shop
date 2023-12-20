@@ -1,4 +1,5 @@
 import React,{ Component} from 'react';
+import ReactDOM from 'react-dom/client';
 import { Link } from 'react-router-dom';
 import s from './About.module.css'
 import { Fragment } from 'react';
@@ -17,80 +18,115 @@ class About extends Component {
   constructor() {
     super();
     this.state = {
-      re: false
+      ww: null,
+      re: false,
     };
+    
     this.logout = this.logout.bind(this);
   }
   logout=()=>{
     persistor.purge()
     window.location.reload()
   }
+  refresh=()=>{
+  this.setState({ ww: window.innerWidth })
+        document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
+        document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+        document.querySelector('#search-rel').style.setProperty('display','none')
+        if(this.state.ww>1210){
+        }
+        else{ 
+         document.querySelector('#lists').style.setProperty('left', "" + window.innerWidth / 2 - 50 + 'px')
+         document.querySelector('#categoriesm').style.setProperty('left', "" + window.innerWidth / 2 -85 + 'px')
+    
+        }
+    
+        if(this.state.ww<875){
+          document.getElementById('search').style.display='none'
+    
+        document.querySelector('#lists').style.setProperty('left', '70px')
+        document.querySelector('#search').style.setProperty('left', '70px')
+        document.querySelector('#categoriesm').style.setProperty('left','97px')
+        if(this.state.ww<=450) document.querySelector('#search').style.setProperty('left', '10px')
+
+    
+      } 
+        else document.getElementById('search').style.display='' 
+      
+     
+        }
   componentDidMount(){
   
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
-  document.querySelector('#catagoriesm').style.setProperty('display','none')
+  document.querySelector('#categoriesm').style.setProperty('display','none')
+  this.setState({ ww: window.innerWidth })
+  document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
+  document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+  document.querySelector('#search-rel').style.setProperty('display','none')
+  
+setTimeout(()=>{this.refresh();},100)
+window.onresize=()=>{this.refresh();
+      
+}
+window.addEventListener('resize',this.refresh);
 
-    const refresh=()=>{
-      document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
-      document.querySelector('#catagoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
-      document.querySelector('#search-rel').style.setProperty('display','none')
-
-      }
-    refresh()
-  window.onresize=refresh;
- 
-// document.addEventListener('scroll',()=>{
-//   if(window.scrollY<160){
-
-//     document.getElementById('rside').style.marginRight="25px"
-//     document.getElementById('langs').style.right="234px"
-    
-//     }
-//     else{
-//     document.getElementById('rside').style.marginRight="0";
-//     document.getElementById('langs').style.right="209px"
-//     } 
-    
-//   })
 
 }
-
+componentWillUnmount(){
+  window.removeEventListener('resize',this.refresh);
+}
  render(){
         return(<Fragment>
           <Helmet>
     <title>
       About | Style Shop
     </title>
-    <meta name='description' content='A summary about our store, Style Shop.' />
+
+    <meta name='description' content='A summary about our store, Style Shop.consectetur adipisicing elit. Eligendi dignissimos at, porro voluptatum dolore facere pariatur repudiandae adipisci nostrum.' />
+    <meta name="keywords" content='fashion, discover, clothes, shoes, electronics, category, style shop, ecommerce, buy, search, shopping, about'/>
+    
     <link rel='canonical' href={window.location.href} />
   </Helmet>
           <Scroll />
           <nav className={s.nav}>
            <Link to='/'>
-      <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
-      </Link>      
-      <Search mode="All Products" />
-<Products no="true" />
-      <ul className={s.lists} id="lists">
-      <Catalang>catt</Catalang>
-        <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
-      <li> <Link to="/contact">Contact Us</Link></li>       
-      </ul><div className={s.rside} id="rside">
-      <Catalang>langi</Catalang>
-        <div className={s.account} id="account">
-        {this.props.account?<div className={s.user}>
-          <i class={`${"fa-thin fa-arrow-right-from-bracket"} ${s.logout}`} onClick={this.logout}></i>
-         <Link to='/profile' className={s.arect}><img className={s.profileimg} src={this.props.account.avatar} />{this.props.account.name}</Link>
-         </div>
-        :
-        <Fragment><Link to="/login" className={s.log} id="log">Log in</Link>
-          <div className={s.averline} id="aver-line"></div>
-          <Link to="/signup" className={s.sign} id="sign">Sign up</Link></Fragment>}
+           <img alt='Website logo' className={s.logo} id='logo' src="./style-shop/7d33433b660792aa4762d6289055ef39.png" /></Link>
+       <Search mode="All Products" />
+          <ul className={s.lists} id="lists"> {this.state.ww < 1210 ? <Fragment>
+        {this.state.ww<875&&  <li><i className="fa-thin fa-magnifying-glass" onClick={()=>{document.getElementById('search').style.display=''; document.getElementById('searchbox').focus()}}></i></li>}
 
-      </div>
-      </div>
-      <Catalang>catm</Catalang>
-      <Catalang>langs</Catalang>
+<li className={s.categoriest} ><i id="categoriest" class="fa-thin fa-cards-blank"></i></li>
+<li><Link to="/purchases" className={s.purchases}><i class="fa-thin fa-cart-shopping"></i></Link></li>
+<li>  <Link to="/contact" className={s.contact} id="contact" ><i class="fa-thin fa-phone"></i></Link></li>
+</Fragment>
+:
+<Fragment>
+  <li className={s.categoriest} id="categoriest">Categories</li>
+  <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
+  <li><Link to="/contact" className={s.contact} id="contact">Contact Us<span id="mark"></span></Link></li>
+</Fragment>
+}
+
+          </ul>
+
+          <div className={s.rside} id="rside">
+            <div className={s.account} id="account">
+              {this.props.account ?this.state.ww<600? <Link to='/profile' className={s.arect}>
+                  <img alt="Profile image" className={s.profileimg} src={this.props.account.avatar} />
+                  </Link>: <div className={s.user}>
+                <i className={`${"fa-thin fa-arrow-right-from-bracket"} ${s.logout}`} onClick={this.logout}></i>
+                <Link to='/profile' className={s.arect}>
+                  <img alt="Profile image" className={s.profileimg} src={this.props.account.avatar} />
+                  {this.props.account.name}</Link>
+              </div>
+                :this.state.ww<600?<Link to="/login"><i class="fa-thin fa-circle-user" style={{position:'relative',width:'50px'}}></i></Link>:
+                <Fragment><Link to="/login" className={s.log} id="log">Log in</Link>
+                  <div className={s.averline} id="aver-line"></div>
+                  <Link to="/signup" className={s.sign} id="sign">Sign up</Link></Fragment>}
+
+            </div>
+          </div>
+          <Catalang>catm</Catalang>
 
       </nav>
 
@@ -110,9 +146,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ratione reicie
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error dolores alias enim voluptate incidunt aperiam possimus? Magni ex cupiditate ipsa sint eum iusto corrupti, reiciendis eius, exercitationem ipsam sed.
     </div><div className={s.photos}>
 
-<div className={s.fphoto}></div>
-<div className={s.sphoto}></div>
-<div className={s.tphoto}></div>
+<img alt="about photo1" src='./istockphoto-688948854-612x612.jpg' className={s.fphoto}/>
+<img alt="about photo2" src='./istockphoto-111885949-612x612.jpg' className={s.sphoto}/>
+<img alt="about photo3" src='./uniqlo-gb031fe49b_1920.jpg' className={s.tphoto}/>
         </div></div>
 
 </main>

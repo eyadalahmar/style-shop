@@ -17,10 +17,11 @@ import Search from '../components/Search'
 import { Helmet } from 'react-helmet-async';
 const persistor = persistStore(store);
 class Contact extends Component {
-
   constructor() {
     super();
-  
+    this.state = {
+      ww: null,
+    };
     this.logout = this.logout.bind(this);
   }
   logout=()=>{
@@ -28,18 +29,43 @@ class Contact extends Component {
     window.location.reload()
   }
 componentDidMount(){
+
   if(!localStorage.getItem('re'))localStorage.setItem('re','*')
-  document.querySelector('#catagoriesm').style.setProperty('display','none')
+  document.querySelector('#categoriesm').style.setProperty('display','none')
 
     const refresh=()=>{
+  this.setState({ ww: window.innerWidth })
+
       document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
-      document.querySelector('#catagoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+      document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
       document.querySelector('#search-rel').style.setProperty('display','none')
   
-     
+      if(this.state.ww>1210){
       }
+      else{ 
+       document.querySelector('#lists').style.setProperty('left', "" + window.innerWidth / 2 - 50 + 'px')
+       document.querySelector('#categoriesm').style.setProperty('left', "" + window.innerWidth / 2 -85 + 'px')
+  
+      }
+  
+      if(this.state.ww<875){
+        document.getElementById('search').style.display='none'
+  
+      document.querySelector('#lists').style.setProperty('left', '70px')
+      document.querySelector('#search').style.setProperty('left', '70px')
+      document.querySelector('#categoriesm').style.setProperty('left','97px')
+      if(this.state.ww<=450) document.querySelector('#search').style.setProperty('left', '10px')
+
+    } 
+      else document.getElementById('search').style.display='' 
+    
+      }
+      this.setState({ ww: window.innerWidth })
+      document.querySelector('#lists').style.setProperty('left',""+window.innerWidth/2-150+'px')
+      document.querySelector('#categoriesm').style.setProperty('left',""+window.innerWidth/2-155+'px')
+      document.querySelector('#search-rel').style.setProperty('display','none')
       
-      refresh()
+    setTimeout(()=>{refresh();},100)
   window.onresize=refresh;
 
 
@@ -50,59 +76,76 @@ render(){
     <title>
       Contact Us | Style Shop
     </title>
-    <meta name='description' content='Here is our contact page, let us know if you have something to say!' />
+    <meta name='description' content='Here is our contact page, let us know if you have something to say!consectetur adipisicing elit. Eligendi dignissimos at, porro voluptatum dolore facere pariatur repudiandae adipisci nostrum.' />
+    <meta name="keywords" content='fashion, discover, clothes, shoes, electronics, category, style shop, ecommerce, buy, search, shopping,contact, contact us'/>
+    
     <link rel='canonical' href={window.location.href} />
   </Helmet>
           <Scroll />
           <nav className={s.nav}>
              
            <Link to='/'>
-      <img className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
+      <img alt='Website logo' className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
       </Link><Search mode="All Products" />
 <Products no="true" />
       <ul className={s.lists} id="lists">
-      <Catalang>catt</Catalang>
+      {this.state.ww < 1210 ? <Fragment>
 
-        <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
-
-        <li><Link to="/about" >About</Link></li>
-
+{this.state.ww<875&&  <li><i className="fa-thin fa-magnifying-glass" onClick={()=>{document.getElementById('search').style.display=''; document.getElementById('searchbox').focus()}}></i></li>}
+            <li className={s.categoriest} ><i id="categoriest" class="fa-thin fa-cards-blank"></i></li>
+            <li><Link to="/purchases" className={s.purchases}><i class="fa-thin fa-cart-shopping"></i></Link></li>
+            <li><Link to="/about" ><i class="fa-thin fa-info"></i></Link></li>
+          </Fragment>
+            :
+            <Fragment>
+              <li className={s.categoriest} id="categoriest">Categories</li>
+              <li><Link to="/purchases" className={s.purchases}>Purchases</Link></li>
+              <li><Link to="/about" >About</Link></li>
+            </Fragment>
+          }
       </ul><div className={s.rside} id="rside">
         
-      <Catalang>langi</Catalang>
 
         
         <div className={s.account} id="account">
-        {this.props.account?<div className={s.user}>
-          <i class={`${"fa-thin fa-arrow-right-from-bracket"} ${s.logout}`} onClick={this.logout}></i>
-         <Link to='/profile' className={s.arect}><img className={s.profileimg} src={this.props.account.avatar} />{this.props.account.name}</Link>
-         </div>
-        :
-        <Fragment><Link to="/login" className={s.log} id="log">Log in</Link>
-          <div className={s.averline} id="aver-line"></div>
-          <Link to="/signup" className={s.sign} id="sign">Sign up</Link></Fragment>}
+        {this.props.account ?this.state.ww<600? <Link to='/profile' className={s.arect}>
+                  <img alt="Profile image" className={s.profileimg} src={this.props.account.avatar} />
+                  </Link>: <div className={s.user}>
+                <i className={`${"fa-thin fa-arrow-right-from-bracket"} ${s.logout}`} onClick={this.logout}></i>
+                <Link to='/profile' className={s.arect}>
+                  <img alt="Profile image" className={s.profileimg} src={this.props.account.avatar} />
+                  {this.props.account.name}</Link>
+              </div>
+                :this.state.ww<600?<Link to="/login"><i class="fa-thin fa-circle-user" style={{position:'relative',width:'50px'}}></i></Link>:
+                <Fragment><Link to="/login" className={s.log} id="log">Log in</Link>
+                  <div className={s.averline} id="aver-line"></div>
+                  <Link to="/signup" className={s.sign} id="sign">Sign up</Link></Fragment>}
 
        </div>
       </div>
-      <Catalang>langs</Catalang>
       <Catalang>catm</Catalang>
 
        </nav>
-<main className={s.main}><div className={s.cdata}>
+<main className={s.main}>
+  <div className={s.carticle}><div className={s.ctitle}>Contact Us</div><div className={s.text}><div>Have any inquire? Any question? Any suggestion? Feel free to tell as!</div>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dolores earum? Modi id vitae, optio quaerat molestiae dolores repellat dolore, tenetur eaque aliquam itaque atque omnis et laborum, nostrum earum!
+ 
+ {this.state.ww>450&&<div className={s.ortext}>Or contact us via:<div className={s.logos}>
+ <i class="fa-solid fa-envelope"></i>
+  <i class="fa-brands fa-linkedin"></i>
+  <i class="fa-brands fa-telegram"></i></div> </div>}</div></div>
+
+  <div className={s.cdata}>
   <div className={s.name}><div>Name:</div><input className={s.cinput} type="text" value={this.props.account?this.props.account.name:''}/></div>
   <div className={s.email}><div>Email:</div><input className={s.cinput} type="email" value={this.props.account?this.props.account.email:''}/></div>
   <div className={s.subject}><div>Subject:</div><input className={s.cinput} type="text"/></div>
   <div className={s.message}><div>Your Message:</div><textarea id="message" className={s.tarea}></textarea></div>
   <button className={s.button}>Submit</button>
   </div>
-  <div className={s.carticle}><div className={s.ctitle}>Contact Us</div><div className={s.text}><div>Have any inquire? Any question? Any suggestion? Feel free to tell as!</div>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dolores earum? Modi id vitae, optio quaerat molestiae dolores repellat dolore, tenetur eaque aliquam itaque atque omnis et laborum, nostrum earum!
- <div className={s.ortext}>Or contact us via:<div className={s.logos}>
+  {this.state.ww<=450&&<div className={s.ortext}> <div className={s.or}>Or contact us via:</div><div className={s.logos}>
  <i class="fa-solid fa-envelope"></i>
   <i class="fa-brands fa-linkedin"></i>
-  <i class="fa-brands fa-telegram"></i></div> </div></div></div>
-
-
+  <i class="fa-brands fa-telegram"></i></div></div>}
 </main>
 <Footer />
 </Fragment>

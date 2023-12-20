@@ -1,4 +1,6 @@
+:root{
 
+}
 .logo{
     height: 75%;
     left: 10px;
@@ -8,31 +10,14 @@
     }
 
 
-    .search{
-        width: 300px;
-        left:85px;
-        margin-top: 5px;
-      background-color: #bb4b00;
-        border-color: ghostwhite;
-        border-width: 1px;
-        height: 25px;
-        border-style: solid;
-        position: absolute;
-        z-index:60;
-        font-family: l;
-      
-      }.contact{
+ .contact{
         color: ghostwhite;
         text-decoration: none;
       display: block;
-      text-align: left;
-      align-items: start;
-      width: 150px;
+      width: max-content;
       word-wrap: unset;
       }
-      .lists{
-        width: 500px;
-      }
+    
   .log,.sign{
     position: absolute;
     top: 10px;
@@ -67,21 +52,7 @@
   
   }
 
-  .searchrel{
-    font-size: 0.8rem;
-    width: 300px;
-    left:85px;
-    color:ghostwhite;
-  background-color: #813300;
-    border-color: ghostwhite;
-    border-width: 1px;
-    z-index: 2;
-    top:44px;
-    height: 50px;
-    border-style: solid;
-    position: absolute;
-    animation-name: appearing;
-  }
+
  
   .lhorline{
     height: 0;
@@ -100,23 +71,7 @@
     width: 80px;
      margin: 0 auto;
   }
-  .scroll{
-    margin: 0 auto;
-    position: absolute;
-    right: 21px;
-    z-index: 83;
-    width:20px;
-    height: 50px;
-    border-color: ghostwhite;
-  border-width: 1px;
-  border-style: solid;
-  background-color: #bb4b00;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  font-size: small;
-  }
+  
   .rside{right: 0;
     top:0;
     position: absolute;
@@ -144,48 +99,36 @@
 }
 
 
-
-
 .fchorline,
 .schorline{
   border-bottom-color: black;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  position: absolute;
-  margin-top: 100px;
-  
-  width :200px;
+  width: 22%;
   height: 0;
-  top:25px;
+  top: 25px;
 }
-.fchorline{
-left: 300px;
-}
-.schorline{
-  right: 300px;
-}
-.category{
-  margin-top: 75px;
 
+.category{
+  position: relative;
+  width: 50%;
+  font-size: 2.5rem;
+  text-align: center;
+  color: black;
+  overflow: hidden;
+  margin: 0px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  scale: 1;
 }
 .main{
   padding-top: 75px;
 }
-.categoryt{
- position: absolute;
-  top: 70px;
-  width: 100%;
-  font-size: 3.7rem;
-  color: black;
-}
-.scrolls{
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  padding: 0;
-  margin: 0;
-  z-index: 5;
-}
+
+
 .arect{
   border-color: ghostwhite;
 border-width: 1px;
@@ -248,3 +191,88 @@ animation-fill-mode: both ;
   display: none;
   top: 15px;
   }
+  .lists i {
+    scale: 1.2;
+  }
+
+  .account i{
+    color: ghostwhite;
+    width: 50px;
+    right: 0;
+    top: 12.5px;
+  
+    scale: 1.5;
+  }
+  @media (max-width:887px) {
+    
+    .outer {
+      position: relative;
+      width: 500px;
+      height: 100px;
+    }
+  
+    .category {
+      width: 70%;
+      font-size: 2.2rem;
+    }
+    
+    .fchorline,
+    .schorline {
+      width: 18%;
+      height: 0;
+      top: 25px;
+    }
+
+  }
+  
+
+  
+  @media (max-width:600px) {
+    .arect {
+      border: none;
+      display: flex;
+      align-items: center;
+      margin: 5px 20px;
+      overflow: visible;
+      height: 50px;
+    }
+  
+    .profileimg {
+      width: 35px;
+      height: 35px;
+    }
+  
+  
+    .category {
+      width: 80%;
+      font-size: 1.8rem;
+    }
+    
+    .fchorline,
+    .schorline {
+      width:20%;
+    }
+
+  }
+  
+  
+  @media (max-width:350px) {
+  
+  
+    .category {
+  
+      position: relative;
+      width: 90%;
+      font-size: 1.5rem;
+    }
+    
+    .fchorline,
+    .schorline {
+      width: 12%;
+      height: 0;
+      top: 25px;
+    }
+    
+  }
+  
+  

@@ -8,6 +8,9 @@ function Categories() {
   var dataraw=JSON.stringify(data)
   if (loading) return <span>Loading...</span>
   if(error) return <span>error</span>
+  if(arguments[0].img){  if(document.getElementById(arguments[0].tagId+'img')) document.getElementById(arguments[0].tagId+'img').src=data[parseInt(arguments[0].img)-1].image
+  return null}
+  
   return (
     <span>
       {data[parseInt(arguments[0].id)-1].name}

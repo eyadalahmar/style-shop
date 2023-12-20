@@ -12,13 +12,10 @@
   display: block;
   text-align: left;
   align-items: start;
-  width: 150px;
+  width: max-content;
   word-wrap: unset;
 }
 
-.lists {
-  width: 500px;
-}
 
 .log,
 .sign {
@@ -51,7 +48,6 @@
 }
 
 .log {
-  right: 130px;
   color: ghostwhite;
   background-color: transparent;
 
@@ -107,7 +103,7 @@
   z-index: -10;
 }
 .login {
-  width: 50%;
+  width: 90%;
   max-width: 400px;
   border-color: black;
   background-color: #bb4b00;
@@ -198,7 +194,6 @@
 
 .alh {
   overflow-x: scroll;
-
   cursor: pointer;
   font-size: large;
   color: ghostwhite;
@@ -212,7 +207,7 @@
   display: inline;
   font-size: x-large;
   line-height: 6px;
-  margin-left: 100px;
+ margin-left: 10px;
 }
 
 .table {
@@ -256,4 +251,47 @@
 .margin {
   width: 1px;
   height: 1px;
+}
+@media (max-width:450px) {
+  .table{
+    font-size: 0.9rem;
+  }
+  .alh{
+    font-size: 1rem;
+
+  }
+}
+@media (max-width:350px) {
+  .table{
+    font-size: 0.7rem;
+  }
+  .alh{
+    font-size: 0.8rem;
+
+  }
+  
+.logt {
+  font-size: 2rem;
+}
+
+.email,
+.password {
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.linput {
+  height: 21px;
+}
+.signup{
+  font-size: 0.8rem;
+}
+}@media (max-width:250px) {
+  .table{
+    font-size: 0.6rem;
+  }
+  .alh{
+    font-size: 0.7rem;
+
+  }
 }

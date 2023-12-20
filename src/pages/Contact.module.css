@@ -1,3 +1,12 @@
+:root{
+  --contact-grid:2fr 1fr  ;
+  --contact-article-width:77%;
+  --contact-data-width:85%;
+  --contact-title:3.5rem;
+  --contact-or:1.4rem;
+  --contact-fields:large;
+  --contact-lmargin:8px;
+}
 .logo {
   height: 75%;
   left: 10px;
@@ -70,7 +79,6 @@
   background-color: transparent;
 
 }
-
 
 
 .searchrel {
@@ -150,15 +158,19 @@
 }
 
 .main {
-  padding-top: 50px;
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns:var(--contact-grid);
+  overflow: hidden;
+  justify-items: center;
 }
 
 .cdata {
-  padding: 30px;
-  height: 80%;
-  width: 35%;
+  padding: 10px;
+  height: 500px;
+  width: var(--contact-data-width);
   display: flex;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   justify-content: space-around;
   right: 0;
@@ -185,7 +197,7 @@ height: 200px;
 .name,
 .email,
 .message {
-  font-size: large;
+  font-size: var(--contact-fields);
 }
 
 .lists {
@@ -193,26 +205,25 @@ height: 200px;
 }
 
 .carticle {
-  width: 40%;
-  margin-left: 80px;
-  margin-top: 100px;
+  width: var(--contact-article-width);
+  margin-top: 50px;
 }
 
 .ctitle {
-  font-size: 3.5rem;
+  font-size: var(--contact-title);
 }
 
 .logos {
   position: relative;
   width: 100px;
-  margin-top: 8px;
+  margin-top: var(--contact-lmargin);
   display: flex;
   justify-content: space-between;
 }
 
 .ortext {
   margin-top: 20px;
-  font-size: 1.4rem;
+  font-size: var(--contact-or);
 }
 
 .main::after {
@@ -233,7 +244,6 @@ height: 200px;
   border-width: 2px;
   border-style: solid;
   height: 30px;
-
 }
 
 .arect {
@@ -280,3 +290,98 @@ height: 200px;
   position: absolute;
   align-items: center;
 }
+.account i{
+  color: ghostwhite;
+  position: relative;
+  width: 50px;
+  right: 0;
+  top: 12.5px;
+
+  scale: 1.5;
+}
+@media (max-width:1000px) {
+:root{
+  --contact-grid:1.4fr 1fr;
+--contact-article-width:87%;
+--contact-data-width:92%;
+--contact-title:2.8rem;
+
+
+}
+
+
+}
+@media (max-width:650px) {
+  :root{
+  --contact-grid:0.8fr 1fr;
+  --contact-title:2.2rem;
+  --contact-or:1.15rem;
+  --contact-data-width:92%;
+  --contact-article-width:92%;
+}
+.text{
+  font-size: small;
+}}
+@media (max-width:600px) {
+  
+  .arect {
+    border: none;
+    display: flex;
+    align-items: center;
+    margin: 5px 20px;
+    overflow: visible;
+    height: 50px;
+  }
+  
+  .profileimg {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (max-width:450px) {
+  :root{
+    --contact-title:2.6rem;
+    --contact-fields:medium;
+    --contact-lmargin:0;
+    
+  }
+  .ctitle{
+    margin-bottom: 17px;
+    margin-top: 40px;
+  }
+  .carticle{
+ margin: 0 auto 30px auto;
+  }
+  .cdata{
+    margin: 0 auto;
+    padding: 0;
+  }
+.main{
+  display: block;
+  padding-top: 10px;
+}
+.ortext{
+margin-top: 50px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.or{
+  margin-right: 12px;
+}
+
+}
+@media (max-width:300px) {
+  :root{
+    --contact-title:2rem;}
+.or{
+font-size: small;
+margin-right: 5px;
+
+}
+.logos{
+  scale: 0.8;
+position: relative;
+}
+  }

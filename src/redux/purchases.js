@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState={
-purList:null
+purList:[],
 }
 
 export const purchases=createSlice({
@@ -9,9 +9,10 @@ export const purchases=createSlice({
     reducers:{
         createPurList:(state)=>{state.purList=[]},
         addToPurList:(state,action)=>{state.purList.push(action.payload)}
+        ,removeFromPurList:(state,action)=>{state.purList.splice(action.payload,1)}
     }
 })
-export const {createPurList,addToPurList} = purchases.actions
+export const {createPurList,addToPurList,removeFromPurList} = purchases.actions
 
 
 export default purchases.reducer

@@ -5,33 +5,16 @@
     scale: 0.75;
     top: 5px;
     position: absolute;
-    }
-
-
-    .search{
-        width: 300px;
-        left:85px;
-        margin-top: 5px;
-      background-color: #bb4b00;
-        border-color: ghostwhite;
-        border-width: 1px;
-        height: 25px;
-        border-style: solid;
-        position: absolute;
-        z-index:60;
-        font-family: l;
-      
+  
       }.contact{
         text-decoration: none;
       display: block;
       text-align: left;
       align-items: start;
-      width: 150px;
+      width: max-content;
       word-wrap: unset;
       }
-      .lists{
-        width: 400px;
-      }
+   
   .log,.sign{
     position: absolute;
     top: 10px;
@@ -43,6 +26,7 @@
   text-align: center;
   line-height: 35px;
   font-size: 1.2rem;}
+ 
   .sign{
     right:30px;
     background-color: ghostwhite;
@@ -66,23 +50,6 @@
   
   }
 
-  .searchrel{
-    font-size: 0.8rem;
-    width: 300px;
-    left:85px;
-    color:ghostwhite;
-  background-color: #813300;
-    border-color: ghostwhite;
-    border-width: 1px;
-    z-index: 2;
-    top:44px;
-    height: 50px;
-    border-style: solid;
-    position: absolute;
-    animation-name: appearing;
-  }
-  
-
   .lhorline{
     height: 0;
     border-bottom-color: ghostwhite;
@@ -100,24 +67,7 @@
     width: 80px;
      margin: 0 auto;
   }
-  .scroll{
-    margin: 0 auto;
-    position: absolute;
-    right: 21px;
-    z-index: 83;
-    width:20px;
-    height: 50px;
-    border-color: ghostwhite;
-  border-width: 1px;
-  border-style: solid;
-  background-color: #bb4b00;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  font-size: small;
-  
-  }
+
   .rside{right: 0;
     top:0;
     position: absolute;
@@ -136,9 +86,9 @@
 .purchasestext{
     font-size: 2.3rem;
     margin: 30px auto 15px auto;
-    
-    width: 600px;
-    
+    width: 90%    ;
+max-width: 600px;
+
   }
   .footer{
     position: absolute;
@@ -213,6 +163,14 @@ border-style: solid
   border-bottom-style: solid
 
 }
+.close{
+width: min-content;
+padding: 0;
+margin: 0;
+font-size:x-large;
+  color:#bb0000;
+cursor: pointer;
+}
 .table tbody tr:nth-of-type(2n){
   background-color: #ffe4d6;
   
@@ -222,8 +180,57 @@ border-style: solid
   
 }
 .bnote{
-  width: max-content;
+  width: fit-content;
   margin: 25px auto -40px auto;
   color: #9a0202;
+text-align: center;
+}
+.account i{
+  color: ghostwhite;
+  right: 0;
+  top: 12.5px;
 
+  scale: 1.5;
+}
+@media (max-width:600px) {
+
+  .arect {
+    border: none;
+    display: flex;
+    align-items: center;
+    margin: 5px 20px;
+    overflow: visible;
+    height: 50px;
+  }
+
+  .profileimg {
+    width: 35px;
+    height: 35px;
+  }
+  .purchasestext{
+    font-size: 1.8rem;
+  }
+
+  .thead *{
+    font-size: large;}
+    .table{
+      font-size: small;
+    }
+}
+@media (max-width:320px){
+  .purchasestext{
+    font-size: 1.6rem;
+  }
+  .thead *{
+    font-size:medium;}
+    .table{
+      font-size:0.7rem;
+    }
+.bnote{
+font-size: small;
+
+}
+.close{
+  font-size: medium;
+}
 }
