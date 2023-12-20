@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/style-shop/static/css/main.eac0a947.css",
-    "main.js": "/style-shop/static/js/main.d1b69944.js",
-    "static/media/uniqlo-gb031fe49b_1920.jpg": "/style-shop/static/media/uniqlo-gb031fe49b_1920.6b8b073e72046262be60.jpg",
+    "main.css": "/style-shop/static/css/main.dbbdfc3a.css",
+    "main.js": "/style-shop/static/js/main.1e46f97a.js",
     "static/media/clothing-header-image.png": "/style-shop/static/media/clothing-header-image.102adf654b8b04df3eb8.png",
     "static/media/istockphoto-901863672-612x612 (1).png": "/style-shop/static/media/istockphoto-901863672-612x612 (1).2f1dab4bfac80480875e.png",
-    "static/media/istockphoto-111885949-612x612.jpg": "/style-shop/static/media/istockphoto-111885949-612x612.728f8a6fcbda4e0709af.jpg",
-    "static/media/istockphoto-688948854-612x612.jpg": "/style-shop/static/media/istockphoto-688948854-612x612.8af4db44cbcdfdee7ed1.jpg",
+    "static/media/SST Arabic Light.ttf": "/style-shop/static/media/SST Arabic Light.0531bcf36ac20ef6bb73.ttf",
+    "static/media/NotoNaskhArabic-Regular.ttf": "/style-shop/static/media/NotoNaskhArabic-Regular.2ff480cc600bf20dd0d1.ttf",
     "static/media/KyrionPro-Regular.ttf": "/style-shop/static/media/KyrionPro-Regular.1191317ab5839225c3e5.ttf",
     "static/media/Untitled-1.svg": "/style-shop/static/media/Untitled-1.ad2d7d6a85b882c2ba91.svg",
     "index.html": "/style-shop/index.html",
-    "main.eac0a947.css.map": "/style-shop/static/css/main.eac0a947.css.map",
-    "main.d1b69944.js.map": "/style-shop/static/js/main.d1b69944.js.map"
+    "main.dbbdfc3a.css.map": "/style-shop/static/css/main.dbbdfc3a.css.map",
+    "main.1e46f97a.js.map": "/style-shop/static/js/main.1e46f97a.js.map"
   },
   "entrypoints": [
-    "static/css/main.eac0a947.css",
-    "static/js/main.d1b69944.js"
+    "static/css/main.dbbdfc3a.css",
+    "static/js/main.1e46f97a.js"
   ]
 }
