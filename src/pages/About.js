@@ -90,7 +90,7 @@ componentWillUnmount(){
           <Scroll />
           <nav className={s.nav}>
            <Link to='/'>
-           <img alt='Website logo' className={s.logo} id='logo' src="./style-shop/7d33433b660792aa4762d6289055ef39.png" /></Link>
+           <img alt='Website logo' className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" /></Link>
        <Search mode="All Products" />
           <ul className={s.lists} id="lists"> {this.state.ww < 1210 ? <Fragment>
         {this.state.ww<875&&  <li><i className="fa-thin fa-magnifying-glass" onClick={()=>{document.getElementById('search').style.display=''; document.getElementById('searchbox').focus()}}></i></li>}

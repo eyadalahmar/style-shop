@@ -501,7 +501,7 @@ aaa[2].innerHTML='Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel d
         </Helmet>
         <div rtl='false'>  <Scroll /></div>
           <nav id='nav' rtl='false'>
-          <img alt='Website logo'  className={s.logo} id='logo' src="./style-shop/7d33433b660792aa4762d6289055ef39.png" />
+          <img alt='Website logo'  className={s.logo} id='logo' src="./7d33433b660792aa4762d6289055ef39.png" />
    <Search mode="All Products" />
           <ul className={s.lists} id="lists">{this.state.ww < 1210 ? <Fragment>
 
