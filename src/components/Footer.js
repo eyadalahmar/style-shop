@@ -21,7 +21,7 @@ observer.observe(document.documentElement, config);
 
 return(
 <footer className={s.footer}><div>
-    © 2023 Style Shop. <span id="footertext">All rights reserved</span>.<a href='https://fakeapi.platzi.com/' target='_blank'><img alt='Used api' className={s.img} src='./Platzi-logo.png'/></a>
+    © 2024 Style Shop. <span id="footertext">All rights reserved</span>.<a href='https://fakeapi.platzi.com/' target='_blank'><img alt='Used api' className={s.img} src='./Platzi-logo.png'/></a>
 </div>
         <img alt='Style Shop logo' src='./a.png' />
       </footer>)

@@ -3,7 +3,7 @@ import s from './Search.module.css'
 import { useEffect } from 'react'
 import { Fragment } from 'react'
 import Products from './Products'
-import { UseSelector } from 'react-redux/es/hooks/useSelector'
+
 import { useDispatch, useSelector } from 'react-redux';
 import { setResults } from '../redux/search'
 import { Navigate } from 'react-router-dom'

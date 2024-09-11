@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/style-shop/static/css/main.dbbdfc3a.css",
-    "main.js": "/style-shop/static/js/main.9e486525.js",
+    "main.css": "/style-shop/static/css/main.c434770f.css",
+    "main.js": "/style-shop/static/js/main.23ee8c75.js",
     "static/media/clothing-header-image.png": "/style-shop/static/media/clothing-header-image.102adf654b8b04df3eb8.png",
     "static/media/istockphoto-901863672-612x612 (1).png": "/style-shop/static/media/istockphoto-901863672-612x612 (1).2f1dab4bfac80480875e.png",
     "static/media/SST Arabic Light.ttf": "/style-shop/static/media/SST Arabic Light.0531bcf36ac20ef6bb73.ttf",
@@ -9,11 +9,11 @@
     "static/media/KyrionPro-Regular.ttf": "/style-shop/static/media/KyrionPro-Regular.1191317ab5839225c3e5.ttf",
     "static/media/Untitled-1.svg": "/style-shop/static/media/Untitled-1.ad2d7d6a85b882c2ba91.svg",
     "index.html": "/style-shop/index.html",
-    "main.dbbdfc3a.css.map": "/style-shop/static/css/main.dbbdfc3a.css.map",
-    "main.9e486525.js.map": "/style-shop/static/js/main.9e486525.js.map"
+    "main.c434770f.css.map": "/style-shop/static/css/main.c434770f.css.map",
+    "main.23ee8c75.js.map": "/style-shop/static/js/main.23ee8c75.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbbdfc3a.css",
-    "static/js/main.9e486525.js"
+    "static/css/main.c434770f.css",
+    "static/js/main.23ee8c75.js"
   ]
 }
