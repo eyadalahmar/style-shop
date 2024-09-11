@@ -570,7 +570,7 @@ aaa[2].innerHTML='Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel d
               <div className={`${s.clothes}`}>
                 <div className={`${s.clothes} ${s.title}`} id="fcategory">1. <Categories id='1' /></div>
                 <div className={`${s.clothes} ${s.article}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repudiandae consequuntur eum soluta doloribus? Dignissimos magni inventore facilis pariatur unde. Repellendus sed excepturi eum provident delectus vel odio, odit Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at possimus ipsa minima omnis totam rem similique nihil nam nostrum? Asperiores praesentium repellat excepturi id cumque modi dolores ut architecto</div>
-                <Link to="/clothes" className={`${s.clothes} ${s.goto}`}>{t('Goto clothes section')} <i className="fa-thin fa-arrow-right-long"></i></Link>
+                <Link to="/clothes" className={`${s.clothes} ${s.goto}`}>{t('Go to clothes section')} <i className="fa-thin fa-arrow-right-long"></i></Link>
               </div>
               <div className={`${s.cphotos} ${s.part}`} id='cphotos'>
 
@@ -586,7 +586,7 @@ aaa[2].innerHTML='Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel d
               <div className={`${s.shoes}`}>
                 <div className={`${s.shoes} ${s.title}`} id="scategory">2. <Categories id='4' /></div>
                 <div className={`${s.shoes} ${s.article}`}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab qui consequuntur enim, nobis dolores maxime voluptatum natus tempore asperiores fuga. Totam adipisci cum repellat blanditiis fuga! Quidem accusantium aut unde! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis aliquam a, cum quo inventore maxime. Fuga error debitis beatae laboriosam sapiente impedit! Esse impedit itaque iste placeat molestiae molestias quibusdam</div>
-                <Link to='/shoes' className={`${s.shoes} ${s.goto}`}>{t('Goto Shoes section')} <i className="fa-thin fa-arrow-right-long"></i></Link>
+                <Link to='/shoes' className={`${s.shoes} ${s.goto}`}>{t('Go to Shoes section')} <i className="fa-thin fa-arrow-right-long"></i></Link>
               </div>
 
               <div className={`${s.sphotos} ${s.part}`}>
@@ -603,7 +603,7 @@ aaa[2].innerHTML='Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel d
               <div className={`${s.electronics}`} >
                 <div className={`${s.electronics} ${s.title}`} id="tcategory">3. <Categories id='2' /></div>
                 <div className={`${s.electronics} ${s.article}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel distinctio nesciunt molestiae magni animi corrupti, quasi vitae in est fugit autem numquam amet iure, veniam, magnam blanditiis? Culpa, ipsam expedita? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio provident dolorem quo aliquam harum quasi corporis, sit iste nisi odit consequatur quod reiciendis quisquam quam ipsa minima unde inventore itaue!</div>
-                <Link to='/electronics' className={`${s.electronics} ${s.goto}`}>{t('Goto electronics section')} <i className="fa-thin fa-arrow-right-long"></i></Link>
+                <Link to='/electronics' className={`${s.electronics} ${s.goto}`}>{t('Go to electronics section')} <i className="fa-thin fa-arrow-right-long"></i></Link>
               </div>
               <div className={`${s.cphotos} ${s.part}`}>
                 <img alt='First electronics photo' className={`${s.cimg}`} id='eimg' />
